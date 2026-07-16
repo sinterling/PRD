@@ -1218,8 +1218,8 @@
                 찾기</a></li>
             <li><a href="#" id="footer-host-match" class="text-sm text-gray-500 hover:text-white transition-colors">용병
                 모집</a></li>
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">매너 온도</a></li>
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">구장 파트너십</a></li>
+            <li><a href="#" id="footer-manner" class="text-sm text-gray-500 hover:text-white transition-colors">매너 온도</a></li>
+            <li><a href="#" id="footer-partner" class="text-sm text-gray-500 hover:text-white transition-colors">구장 파트너십</a></li>
           </ul>
         </div>
         <div>
@@ -1228,16 +1228,16 @@
             <li><a href="#" id="footer-faq" class="text-sm text-gray-500 hover:text-white transition-colors">자주 묻는
                 질문</a></li>
             <li><a href="#" id="footer-guide" class="text-sm text-gray-500 hover:text-white transition-colors">이용 가이드</a></li>
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">1:1 문의</a></li>
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">공지사항</a></li>
+            <li><a href="#" id="footer-contact" class="text-sm text-gray-500 hover:text-white transition-colors">1:1 문의</a></li>
+            <li><a href="#" id="footer-notice" class="text-sm text-gray-500 hover:text-white transition-colors">공지사항</a></li>
           </ul>
         </div>
         <div>
           <p class="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">법적 고지</p>
           <ul class="space-y-2">
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">서비스 이용약관</a></li>
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">개인정보 처리방침</a></li>
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">결제 및 환불 정책</a></li>
+            <li><a href="#" id="footer-terms" class="text-sm text-gray-500 hover:text-white transition-colors">서비스 이용약관</a></li>
+            <li><a href="#" id="footer-privacy" class="text-sm text-gray-500 hover:text-white transition-colors">개인정보 처리방침</a></li>
+            <li><a href="#" id="footer-refund" class="text-sm text-gray-500 hover:text-white transition-colors">결제 및 환불 정책</a></li>
           </ul>
         </div>
       </div>
@@ -1803,6 +1803,370 @@
   </div>
 
 
+  <!-- ====================================
+       매너 온도 모달
+  ===================================== -->
+  <div id="manner-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+    <div id="manner-modal-backdrop" class="absolute inset-0" style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
+    <div class="relative w-full max-w-2xl glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden" style="animation:slideUp .35s ease-out forwards; max-height:85vh; display:flex; flex-direction:column;">
+      <div class="h-1 w-full flex-shrink-0" style="background:linear-gradient(90deg,#FF6B35,#FFB347);"></div>
+      <div class="px-6 pt-6 pb-4 border-b border-white/5 flex-shrink-0 flex items-center justify-between">
+        <div>
+          <h2 class="font-display font-black text-xl text-white">&#127777;&#65039; 매너 온도 시스템</h2>
+          <p class="text-xs text-gray-500 mt-0.5">신뢰를 쉽어보이는 나만의 스포츠 지수</p>
+        </div>
+        <button id="manner-modal-close" class="w-8 h-8 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="닫기">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-6">
+        <!-- 온도 시각화 -->
+        <div class="rounded-2xl p-5" style="background:rgba(255,107,53,0.08);border:1px solid rgba(255,107,53,0.2);">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-semibold text-gray-300">나의 초기 매너 온도</span>
+            <span class="font-display font-black text-3xl" style="color:#FF6B35;">36.5&deg;</span>
+          </div>
+          <div class="w-full bg-dark-700 rounded-full h-3">
+            <div class="h-3 rounded-full" style="width:52%;background:linear-gradient(90deg,#FF6B35,#FFB347);"></div>
+          </div>
+          <div class="flex justify-between text-[10px] text-gray-600 mt-1.5"><span>0&deg;</span><span>매너 오르면 좋은 매칭</span><span>70&deg;</span></div>
+        </div>
+        <!-- 평가 항목 -->
+        <div>
+          <h3 class="font-bold text-white mb-3">평가 3요소</h3>
+          <div class="space-y-3">
+            <div class="glass-light rounded-xl p-4 flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(108,58,228,0.2);">&#9917;</div>
+              <div class="flex-1">
+                <p class="text-sm font-semibold text-white">실력</p>
+                <p class="text-xs text-gray-400">경기 실력 및 팅팔레이 수준</p>
+              </div>
+              <div class="w-20">
+                <div class="w-full bg-dark-700 rounded-full h-1.5"><div class="h-1.5 rounded-full bg-brand-grad" style="width:80%;"></div></div>
+              </div>
+            </div>
+            <div class="glass-light rounded-xl p-4 flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(57,255,20,0.1);">&#128075;</div>
+              <div class="flex-1">
+                <p class="text-sm font-semibold text-white">매너</p>
+                <p class="text-xs text-gray-400">언행, 정정도, 팀워크 평가</p>
+              </div>
+              <div class="w-20">
+                <div class="w-full bg-dark-700 rounded-full h-1.5"><div class="h-1.5 rounded-full" style="width:90%;background:#39FF14;"></div></div>
+              </div>
+            </div>
+            <div class="glass-light rounded-xl p-4 flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(0,198,255,0.1);">&#8987;</div>
+              <div class="flex-1">
+                <p class="text-sm font-semibold text-white">시간 엄수</p>
+                <p class="text-xs text-gray-400">앞뒤 울림 없는 정확한 시간 준수</p>
+              </div>
+              <div class="w-20">
+                <div class="w-full bg-dark-700 rounded-full h-1.5"><div class="h-1.5 rounded-full bg-accent" style="width:100%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 돵도표 -->
+        <div>
+          <h3 class="font-bold text-white mb-3">온도별 혼🔥인 구얰비</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 glass-light rounded-xl px-4 py-2.5">
+              <span class="text-base">&#129395;</span><span class="text-xs font-semibold text-white flex-1">50° 이상</span><span class="text-[10px] text-gray-400">우선 수락 배지 부여</span>
+            </div>
+            <div class="flex items-center gap-3 glass-light rounded-xl px-4 py-2.5">
+              <span class="text-base">&#128293;</span><span class="text-xs font-semibold text-white flex-1">36.5° 시작</span><span class="text-[10px] text-gray-400">신규 가입자 기본값</span>
+            </div>
+            <div class="flex items-center gap-3 glass-light rounded-xl px-4 py-2.5">
+              <span class="text-base">&#10060;</span><span class="text-xs font-semibold text-warn flex-1">20° 미만</span><span class="text-[10px] text-gray-400">매칭 제한 / 경고 단계</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================
+       구장 파트너십 모달
+  ===================================== -->
+  <div id="partner-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+    <div id="partner-modal-backdrop" class="absolute inset-0" style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
+    <div class="relative w-full max-w-lg glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden" style="animation:slideUp .35s ease-out forwards; max-height:85vh; display:flex; flex-direction:column;">
+      <div class="h-1 w-full flex-shrink-0" style="background:linear-gradient(90deg,#39FF14,#00C6FF);"></div>
+      <div class="px-6 pt-6 pb-4 border-b border-white/5 flex-shrink-0 flex items-center justify-between">
+        <h2 class="font-display font-black text-xl text-white">&#127942; 구장 파트너십</h2>
+        <button id="partner-modal-close" class="w-8 h-8 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="닫기">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-5">
+        <p class="text-sm text-gray-400 leading-relaxed">구장을 운영하고 계신가요? 동네용병과 함께하면 <strong class="text-white">플랜트마다 안정적인 예약 수요</strong>를 확보할 수 있습니다.</p>
+        <div class="space-y-3">
+          <div class="glass-light rounded-xl p-4 flex items-start gap-3">
+            <span class="text-xl mt-0.5">&#128200;</span>
+            <div>
+              <p class="text-sm font-semibold text-white">안정적인 수익 확보</p>
+              <p class="text-xs text-gray-400 mt-0.5">용병 매칭을 통해 유휴 시간대 구장 사용률을 포터 모았던 매출로 전환하세요.</p>
+            </div>
+          </div>
+          <div class="glass-light rounded-xl p-4 flex items-start gap-3">
+            <span class="text-xl mt-0.5">&#128241;</span>
+            <div>
+              <p class="text-sm font-semibold text-white">앱 내 구장 노출</p>
+              <p class="text-xs text-gray-400 mt-0.5">위치 기반 지도에 구장 마커 당신의 구장이 이용자에게 노출됩니다.</p>
+            </div>
+          </div>
+          <div class="glass-light rounded-xl p-4 flex items-start gap-3">
+            <span class="text-xl mt-0.5">&#10004;&#65039;</span>
+            <div>
+              <p class="text-sm font-semibold text-white">노쇼 0% 안심 운영</p>
+              <p class="text-xs text-gray-400 mt-0.5">결제 시스템과 QR 출석으로 예약 노쇼를 원천 차단합니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-4" style="background:rgba(57,255,20,0.06);border:1px solid rgba(57,255,20,0.2);">
+          <p class="text-xs text-gray-400 mb-3">파트너십 문의</p>
+          <p class="text-sm font-bold text-white">partner@dongne-yongbyeong.kr</p>
+          <p class="text-xs text-gray-500 mt-1">담당자 확인 후 영업일 기준 48시간 내 회신드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================
+       1:1 문의 모달
+  ===================================== -->
+  <div id="contact-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+    <div id="contact-modal-backdrop" class="absolute inset-0" style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
+    <div class="relative w-full max-w-md glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden" style="animation:slideUp .35s ease-out forwards; max-height:85vh; display:flex; flex-direction:column;">
+      <div class="h-1 w-full flex-shrink-0" style="background:linear-gradient(90deg,#6C3AE4,#00C6FF);"></div>
+      <div class="px-6 pt-6 pb-4 border-b border-white/5 flex-shrink-0 flex items-center justify-between">
+        <h2 class="font-display font-black text-xl text-white">&#128172; 1:1 문의</h2>
+        <button id="contact-modal-close" class="w-8 h-8 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="닫기">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto">
+        <form id="contact-form" class="space-y-4" onsubmit="return false;">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">오류 유형 <span class="text-warn">*</span></label>
+            <select id="contact-type" class="w-full rounded-xl px-4 py-3 text-sm text-white outline-none transition-all appearance-none cursor-pointer"
+              style="background:rgba(28,28,56,0.8) url('data:image/svg+xml;utf8,<svg fill=%22%239CA3AF%22 viewBox=%220 0 24 24%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M7 10l5 5 5-5z%22/></svg>') no-repeat right 12px center/20px 20px; border:1px solid rgba(255,255,255,0.08);">
+              <option value="" disabled selected>문의 유형을 선택해주세요</option>
+              <option value="payment">결제 / 환불 관련</option>
+              <option value="match">매칭 / 모집 관련</option>
+              <option value="account">계정 / 로그인 문제</option>
+              <option value="report">신고 / 제재 관련</option>
+              <option value="etc">기타</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">닉네임 <span class="text-warn">*</span></label>
+            <input id="contact-name" type="text" placeholder="홍길동" maxlength="20" required
+              class="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 outline-none transition-all"
+              style="background:rgba(28,28,56,0.8);border:1px solid rgba(255,255,255,0.08);" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">연락처 (이메일) <span class="text-warn">*</span></label>
+            <input id="contact-email" type="email" placeholder="example@email.com" required
+              class="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 outline-none transition-all"
+              style="background:rgba(28,28,56,0.8);border:1px solid rgba(255,255,255,0.08);" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">문의 내용 <span class="text-warn">*</span></label>
+            <textarea id="contact-msg" rows="4" placeholder="문의 내용을 자세히 원해주세요." maxlength="500" required
+              class="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 outline-none resize-none transition-all"
+              style="background:rgba(28,28,56,0.8);border:1px solid rgba(255,255,255,0.08);"></textarea>
+          </div>
+          <button type="submit" id="contact-submit"
+            class="btn-primary w-full py-4 rounded-2xl font-black text-white text-sm shadow-xl shadow-brand-500/30 flex items-center justify-center gap-2">
+            &#128172; 문의 접수하기
+          </button>
+          <p class="text-[10px] text-center text-gray-600">영업일 기준 24시간 내 답변 드립니다.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================
+       공지사항 모달
+  ===================================== -->
+  <div id="notice-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+    <div id="notice-modal-backdrop" class="absolute inset-0" style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
+    <div class="relative w-full max-w-lg glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden" style="animation:slideUp .35s ease-out forwards; max-height:85vh; display:flex; flex-direction:column;">
+      <div class="h-1 w-full flex-shrink-0" style="background:linear-gradient(90deg,#6C3AE4,#00C6FF);"></div>
+      <div class="px-6 pt-6 pb-4 border-b border-white/5 flex-shrink-0 flex items-center justify-between">
+        <h2 class="font-display font-black text-xl text-white">&#128228; 공지사항</h2>
+        <button id="notice-modal-close" class="w-8 h-8 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="닫기">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-4 overflow-y-auto space-y-3">
+        <div class="glass-light rounded-2xl p-4" style="border:1px solid rgba(108,58,228,0.3);">
+          <div class="flex items-start gap-3">
+            <span class="text-[10px] font-bold text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5">신규</span>
+            <div>
+              <p class="text-sm font-bold text-white">[업데이트] 다중 언어 지원 출시 안내</p>
+              <p class="text-[10px] text-gray-500 mt-0.5">2026.07.15</p>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">영어 / 일본어 지원으로 외국인 유저도 동네용병을 이용할 수 있게 되었습니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-light rounded-2xl p-4">
+          <div class="flex items-start gap-3">
+            <span class="text-[10px] font-bold text-warn bg-warn/20 px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5">점검</span>
+            <div>
+              <p class="text-sm font-bold text-white">[점검] 7월 17일 새벽 2시 ~ 4시 서비스 점검</p>
+              <p class="text-[10px] text-gray-500 mt-0.5">2026.07.14</p>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">서버 안정성 향상을 위한 정기 점검이 예정되어 있습니다. 이용에 참고 부탁드립니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-light rounded-2xl p-4">
+          <div class="flex items-start gap-3">
+            <span class="text-[10px] font-bold text-accent bg-accent/20 px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5">이벤트</span>
+            <div>
+              <p class="text-sm font-bold text-white">[이벤트] 첫 매칭 100% 캐시백 마감 D-5</p>
+              <p class="text-[10px] text-gray-500 mt-0.5">2026.07.10</p>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">신규 가입 후 첫 매칭 시 참가비 100% 캐시백 이벤트가 7월 20일 종료됩니다. 서두르세요!</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-light rounded-2xl p-4">
+          <div class="flex items-start gap-3">
+            <span class="text-[10px] font-bold text-gray-400 bg-white/10 px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5">일반</span>
+            <div>
+              <p class="text-sm font-bold text-white">[안내] 대구 서비스 오픈 안내</p>
+              <p class="text-[10px] text-gray-500 mt-0.5">2026.07.01</p>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">수도권에 이어 대구 지역 서비스를 오픈합니다. 대구 시유 유저여러분, 많은 이용 부탁드립니다!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================
+       서비스 이용약관 모달
+  ===================================== -->
+  <div id="terms-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+    <div id="terms-modal-backdrop" class="absolute inset-0" style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
+    <div class="relative w-full max-w-xl glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden" style="animation:slideUp .35s ease-out forwards; max-height:85vh; display:flex; flex-direction:column;">
+      <div class="h-1 w-full flex-shrink-0" style="background:linear-gradient(90deg,#6C3AE4,#00C6FF);"></div>
+      <div class="px-6 pt-6 pb-4 border-b border-white/5 flex-shrink-0 flex items-center justify-between">
+        <h2 class="font-display font-black text-xl text-white">&#128220; 서비스 이용약관</h2>
+        <button id="terms-modal-close" class="w-8 h-8 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="닫기">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto text-sm text-gray-400 leading-relaxed space-y-5">
+        <p class="text-[10px] text-gray-600">시행일: 2026년 7월 1일 / 버전: v1.0</p>
+        <div><h3 class="font-bold text-white mb-2">제 1조 (목적)</h3><p>이 약관은 동네용병(이하 &ldquo;회사&rdquo;)이 제공하는 스포츠 용병 매칭 플랫폼 서비스(이하 &ldquo;서비스&rdquo;)의 이용에 관한 조건 및 절차를 규정합니다.</p></div>
+        <div><h3 class="font-bold text-white mb-2">제 2조 (정의)</h3><ul class="list-disc pl-5 space-y-1"><li>&ldquo;이용자&rdquo;란 본 약관에 동의하고 회사가 제공하는 서비스를 이용하는 회원을 말합니다.</li><li>&ldquo;호스트&rdquo;란 용병 모집글을 등록하는 팀장을 말합니다.</li><li>&ldquo;게스트&rdquo;란 용병으로 신청하는 회원을 말합니다.</li></ul></div>
+        <div><h3 class="font-bold text-white mb-2">제 3조 (서비스 제공 및 제한)</h3><p>회사는 서비스를 24시간 제공하는 것을 원칙으로 하되, 시스템 점검 등의 운영상 필요한 경우 서비스를 일시 중단할 수 있습니다.</p></div>
+        <div><h3 class="font-bold text-white mb-2">제 4조 (이용자 의무)</h3><ul class="list-disc pl-5 space-y-1"><li>이용자는 본 약관 및 회사의 정책을 준수해야 합니다.</li><li>🔞 미성년자(14세 미만)의 이용은 부모님의 동의가 필요합니다.</li><li>다른 사람의 정보를 영리하거나 음란한 목적으로 사용하는 행위는 금지됩니다.</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================
+       개인정보 처리방침 모달
+  ===================================== -->
+  <div id="privacy-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+    <div id="privacy-modal-backdrop" class="absolute inset-0" style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
+    <div class="relative w-full max-w-xl glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden" style="animation:slideUp .35s ease-out forwards; max-height:85vh; display:flex; flex-direction:column;">
+      <div class="h-1 w-full flex-shrink-0" style="background:linear-gradient(90deg,#6C3AE4,#00C6FF);"></div>
+      <div class="px-6 pt-6 pb-4 border-b border-white/5 flex-shrink-0 flex items-center justify-between">
+        <h2 class="font-display font-black text-xl text-white">&#128274; 개인정보 처리방침</h2>
+        <button id="privacy-modal-close" class="w-8 h-8 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="닫기">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto text-sm text-gray-400 leading-relaxed space-y-5">
+        <p class="text-[10px] text-gray-600">시행일: 2026년 7월 1일</p>
+        <div><h3 class="font-bold text-white mb-2">1. 수집하는 개인정보</h3><ul class="list-disc pl-5 space-y-1"><li>필수: 닉네임, 연락처(전화번호), 기기 식별자</li><li>선택: 위치 정보(GPS), 신체 측정값(프로필 입력 시)</li></ul></div>
+        <div><h3 class="font-bold text-white mb-2">2. 이용 목적</h3><ul class="list-disc pl-5 space-y-1"><li>위치 기반 매칭 서비스 제공</li><li>결제 정산 처리</li><li>서비스 개선 및 매너 온도 산정</li></ul></div>
+        <div><h3 class="font-bold text-white mb-2">3. 제 3자 제공</h3><p>회사는 법령에 의한 경우를 제외하고 이용자의 개인정보를 제 3자에게 제공하지 않습니다. 결제 대행 업체는 업무 수행에 필요한 범위 내에서만 정보를 제공받습니다.</p></div>
+        <div><h3 class="font-bold text-white mb-2">4. 보유 기간</h3><p>회원 탈퇴 시 즉시 파기하는 것을 원칙으로 하되, 결제 기록은 전자상거래법에 따라 5년 동안 보유합니다.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================
+       결제 및 환불 정책 모달
+  ===================================== -->
+  <div id="refund-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+    <div id="refund-modal-backdrop" class="absolute inset-0" style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
+    <div class="relative w-full max-w-lg glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden" style="animation:slideUp .35s ease-out forwards; max-height:85vh; display:flex; flex-direction:column;">
+      <div class="h-1 w-full flex-shrink-0" style="background:linear-gradient(90deg,#39FF14,#00C6FF);"></div>
+      <div class="px-6 pt-6 pb-4 border-b border-white/5 flex-shrink-0 flex items-center justify-between">
+        <h2 class="font-display font-black text-xl text-white">&#128179; 결제 및 환불 정책</h2>
+        <button id="refund-modal-close" class="w-8 h-8 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="닫기">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-5">
+        <!-- 환불 표 -->
+        <div>
+          <h3 class="font-bold text-white mb-3">&#128202; 시간별 환불 규정</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(57,255,20,0.08);border:1px solid rgba(57,255,20,0.2);">
+              <span class="text-base">&#9989;</span>
+              <div class="flex-1">
+                <p class="text-sm font-bold text-white">경기 24시간 전</p>
+                <p class="text-xs text-gray-400">취소 신청 시</p>
+              </div>
+              <span class="font-bold text-neon">100% 환불</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(255,179,71,0.08);border:1px solid rgba(255,179,71,0.2);">
+              <span class="text-base">&#9888;&#65039;</span>
+              <div class="flex-1">
+                <p class="text-sm font-bold text-white">경기 12시간 전</p>
+                <p class="text-xs text-gray-400">취소 신청 시</p>
+              </div>
+              <span class="font-bold" style="color:#FFB347;">50% 환불</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(255,107,53,0.08);border:1px solid rgba(255,107,53,0.2);">
+              <span class="text-base">&#10060;</span>
+              <div class="flex-1">
+                <p class="text-sm font-bold text-white">경기 12시간 이후</p>
+                <p class="text-xs text-gray-400">노쇼 포함</p>
+              </div>
+              <span class="font-bold text-warn">환불 불가</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(108,58,228,0.1);border:1px solid rgba(108,58,228,0.25);">
+              <span class="text-base">&#127783;&#65039;</span>
+              <div class="flex-1">
+                <p class="text-sm font-bold text-white">호스트 취소(우천 등)</p>
+                <p class="text-xs text-gray-400">기상 슬화 등 불가피력</p>
+              </div>
+              <span class="font-bold text-brand-300">100% 환불</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <h3 class="font-bold text-white">결제 수단</h3>
+          <div class="glass-light rounded-xl p-4 flex items-center gap-3">
+            <span class="text-xl">&#128179;</span>
+            <div>
+              <p class="text-sm font-semibold text-white">앱 내 간편결제</p>
+              <p class="text-xs text-gray-400">신청 수락 후 자동 결제</p>
+            </div>
+          </div>
+          <div class="glass-light rounded-xl p-4 flex items-center gap-3">
+            <span class="text-xl">&#128193;</span>
+            <div>
+              <p class="text-sm font-semibold text-white">정산 배분</p>
+              <p class="text-xs text-gray-400">출석 확인 후 등록된 계좌로 자동 입금</p>
+            </div>
+          </div>
+          <p class="text-[11px] text-gray-600 leading-relaxed">* 개인 계좌 송금 요구하는 호스트는 즉시 신고해주세요. 모든 결제는 동네용병 플랫폼을 통해서만 진행됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <script>
     // 모바일 메뉴
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -2211,6 +2575,65 @@
     const guideBackdrop = document.getElementById('guide-modal-backdrop');
     if(guideCloseBtn) guideCloseBtn.addEventListener('click', closeGuideModal);
     if(guideBackdrop) guideBackdrop.addEventListener('click', closeGuideModal);
+
+    // ── 매너 온도 모달
+    const mannerModal = document.getElementById('manner-modal');
+    const footerManner = document.getElementById('footer-manner');
+    if (footerManner) footerManner.addEventListener('click', e => { e.preventDefault(); mannerModal.style.display='flex'; document.body.style.overflow='hidden'; });
+    document.getElementById('manner-modal-close').addEventListener('click', () => { mannerModal.style.display='none'; document.body.style.overflow=''; });
+    document.getElementById('manner-modal-backdrop').addEventListener('click', () => { mannerModal.style.display='none'; document.body.style.overflow=''; });
+
+    // ── 구장 파트너십 모달
+    const partnerModal = document.getElementById('partner-modal');
+    const footerPartner = document.getElementById('footer-partner');
+    if (footerPartner) footerPartner.addEventListener('click', e => { e.preventDefault(); partnerModal.style.display='flex'; document.body.style.overflow='hidden'; });
+    document.getElementById('partner-modal-close').addEventListener('click', () => { partnerModal.style.display='none'; document.body.style.overflow=''; });
+    document.getElementById('partner-modal-backdrop').addEventListener('click', () => { partnerModal.style.display='none'; document.body.style.overflow=''; });
+
+    // ── 1:1 문의 모달
+    const contactModal = document.getElementById('contact-modal');
+    const footerContact = document.getElementById('footer-contact');
+    if (footerContact) footerContact.addEventListener('click', e => { e.preventDefault(); contactModal.style.display='flex'; document.body.style.overflow='hidden'; });
+    document.getElementById('contact-modal-close').addEventListener('click', () => { contactModal.style.display='none'; document.body.style.overflow=''; });
+    document.getElementById('contact-modal-backdrop').addEventListener('click', () => { contactModal.style.display='none'; document.body.style.overflow=''; });
+    document.getElementById('contact-submit').addEventListener('click', () => {
+      const type = document.getElementById('contact-type').value;
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const msg = document.getElementById('contact-msg').value.trim();
+      if (!type || !name || !email || !msg) { showToast('모든 필수 항목을 입력해주세요.', '⚠️'); return; }
+      contactModal.style.display='none'; document.body.style.overflow='';
+      document.getElementById('contact-form').reset();
+      showToast('문의가 접수되었습니다! 영업일 기준 24시간 내 답변해드리겠습니다. 📧', '✅');
+    });
+
+    // ── 공지사항 모달
+    const noticeModal = document.getElementById('notice-modal');
+    const footerNotice = document.getElementById('footer-notice');
+    if (footerNotice) footerNotice.addEventListener('click', e => { e.preventDefault(); noticeModal.style.display='flex'; document.body.style.overflow='hidden'; });
+    document.getElementById('notice-modal-close').addEventListener('click', () => { noticeModal.style.display='none'; document.body.style.overflow=''; });
+    document.getElementById('notice-modal-backdrop').addEventListener('click', () => { noticeModal.style.display='none'; document.body.style.overflow=''; });
+
+    // ── 서비스 이용약관 모달
+    const termsModal = document.getElementById('terms-modal');
+    const footerTerms = document.getElementById('footer-terms');
+    if (footerTerms) footerTerms.addEventListener('click', e => { e.preventDefault(); termsModal.style.display='flex'; document.body.style.overflow='hidden'; });
+    document.getElementById('terms-modal-close').addEventListener('click', () => { termsModal.style.display='none'; document.body.style.overflow=''; });
+    document.getElementById('terms-modal-backdrop').addEventListener('click', () => { termsModal.style.display='none'; document.body.style.overflow=''; });
+
+    // ── 개인정보 처리방침 모달
+    const privacyModal = document.getElementById('privacy-modal');
+    const footerPrivacy = document.getElementById('footer-privacy');
+    if (footerPrivacy) footerPrivacy.addEventListener('click', e => { e.preventDefault(); privacyModal.style.display='flex'; document.body.style.overflow='hidden'; });
+    document.getElementById('privacy-modal-close').addEventListener('click', () => { privacyModal.style.display='none'; document.body.style.overflow=''; });
+    document.getElementById('privacy-modal-backdrop').addEventListener('click', () => { privacyModal.style.display='none'; document.body.style.overflow=''; });
+
+    // ── 결제 및 환불 정책 모달
+    const refundModal = document.getElementById('refund-modal');
+    const footerRefund = document.getElementById('footer-refund');
+    if (footerRefund) footerRefund.addEventListener('click', e => { e.preventDefault(); refundModal.style.display='flex'; document.body.style.overflow='hidden'; });
+    document.getElementById('refund-modal-close').addEventListener('click', () => { refundModal.style.display='none'; document.body.style.overflow=''; });
+    document.getElementById('refund-modal-backdrop').addEventListener('click', () => { refundModal.style.display='none'; document.body.style.overflow=''; });
 
     // 스무스 스크롤
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
