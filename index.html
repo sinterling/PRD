@@ -902,7 +902,7 @@
             class="w-14 h-14 rounded-2xl bg-warn/20 border border-warn/30 flex items-center justify-center text-2xl mb-5">
             &#9889;</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">초과 방지 동시성 제어</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">Redis 분산 락으로 동시 신청이 몰려도 정확히 남은 자리만큼만 신청 후 결제됩니다. 인원 초과 걱정 없는
+          <p class="text-sm text-gray-400 leading-relaxed">동시 신청이 몰려도 정확히 남은 자리만큼만 신청 후 결제됩니다. 인원 초과 걱정 없는
             안정적인
             시스템.</p>
           <div class="flex flex-wrap gap-2 mt-4">
@@ -921,7 +921,7 @@
             시 보증금 귀속.</p>
           <div class="flex flex-wrap gap-2 mt-4">
             <span class="text-[11px] text-neon bg-neon/10 px-3 py-1 rounded-full font-medium">Bank</span>
-            <span class="text-[11px] text-neon bg-neon/10 px-3 py-1 rounded-full font-medium">앱 내 간편결제로</span>
+            <span class="text-[11px] text-neon bg-neon/10 px-3 py-1 rounded-full font-medium">앱 내 간편결제</span>
           </div>
         </div>
 
@@ -1214,8 +1214,10 @@
         <div>
           <p class="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">서비스</p>
           <ul class="space-y-2">
-            <li><a href="#" id="footer-find-match" class="text-sm text-gray-500 hover:text-white transition-colors">경기 찾기</a></li>
-            <li><a href="#" id="footer-host-match" class="text-sm text-gray-500 hover:text-white transition-colors">용병 모집</a></li>
+            <li><a href="#" id="footer-find-match" class="text-sm text-gray-500 hover:text-white transition-colors">경기
+                찾기</a></li>
+            <li><a href="#" id="footer-host-match" class="text-sm text-gray-500 hover:text-white transition-colors">용병
+                모집</a></li>
             <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">매너 온도</a></li>
             <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">구장 파트너십</a></li>
           </ul>
@@ -1223,8 +1225,9 @@
         <div>
           <p class="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">지원</p>
           <ul class="space-y-2">
-            <li><a href="#" id="footer-faq" class="text-sm text-gray-500 hover:text-white transition-colors">자주 묻는 질문</a></li>
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">이용 가이드</a></li>
+            <li><a href="#" id="footer-faq" class="text-sm text-gray-500 hover:text-white transition-colors">자주 묻는
+                질문</a></li>
+            <li><a href="#" id="footer-guide" class="text-sm text-gray-500 hover:text-white transition-colors">이용 가이드</a></li>
             <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">1:1 문의</a></li>
             <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">공지사항</a></li>
           </ul>
@@ -1595,8 +1598,7 @@
   <!-- ====================================
        자주 묻는 질문 (FAQ) 모달
   ===================================== -->
-  <div id="faq-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4"
-    style="display:none!important">
+  <div id="faq-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
     <!-- 백드롭 -->
     <div id="faq-modal-backdrop" class="absolute inset-0"
       style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
@@ -1605,7 +1607,7 @@
     <div
       class="relative w-full max-w-2xl glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden"
       style="animation:slideUp .35s ease-out forwards; max-height: 85vh; display: flex; flex-direction: column;">
-      
+
       <!-- 헤더 그라디언트 띠 -->
       <div class="h-1 w-full flex-shrink-0" style="background:linear-gradient(90deg,#6C3AE4,#00C6FF);"></div>
 
@@ -1623,31 +1625,38 @@
 
       <!-- FAQ 리스트 -->
       <div class="p-6 overflow-y-auto" id="faq-accordion">
-        
+
         <!-- FAQ 1 -->
         <div class="border-b border-white/10 last:border-0">
-          <button class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
+          <button
+            class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
             <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
+              <span
+                class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
               <span class="text-sm font-semibold">참가비 결제 후 취소/환불 규정이 어떻게 되나요?</span>
             </div>
-            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="faq-content hidden px-9 pb-4 text-sm text-gray-400 leading-relaxed mt-2">
-            경기 시작 24시간 전까지는 100% 환불이 가능합니다. 12시간 전까지는 50% 환불되며, 그 이후로는 환불이 불가하오니 신중한 신청 부탁드립니다. (우천 등 기상 악화로 호스트가 취소한 경우 100% 환불됩니다.)
+            경기 시작 24시간 전까지는 100% 환불이 가능합니다. 12시간 전까지는 50% 환불되며, 그 이후로는 환불이 불가하오니 신중한 신청 부탁드립니다. (우천 등 기상 악화로 호스트가 취소한 경우
+            100% 환불됩니다.)
           </div>
         </div>
 
         <!-- FAQ 2 -->
         <div class="border-b border-white/10 last:border-0">
-          <button class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
+          <button
+            class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
             <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
+              <span
+                class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
               <span class="text-sm font-semibold">팀장이 신청을 거절하면 결제 금액은 어떻게 되나요?</span>
             </div>
-            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
@@ -1658,28 +1667,35 @@
 
         <!-- FAQ 3 -->
         <div class="border-b border-white/10 last:border-0">
-          <button class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
+          <button
+            class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
             <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
+              <span
+                class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
               <span class="text-sm font-semibold">매너 온도는 어떻게 측정되나요?</span>
             </div>
-            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="faq-content hidden px-9 pb-4 text-sm text-gray-400 leading-relaxed mt-2">
-            매너 온도는 36.5도에서 시작하여 경기 종료 후 참가자들끼리의 상호 평가(실력, 매너, 시간 엄수)를 통해 상승하거나 하락합니다. 노쇼 시 큰 폭으로 하락하며, 매너 온도가 높을수록 다음 매칭에서 수락될 확률이 높아집니다.
+            매너 온도는 36.5도에서 시작하여 경기 종료 후 참가자들끼리의 상호 평가(실력, 매너, 시간 엄수)를 통해 상승하거나 하락합니다. 노쇼 시 큰 폭으로 하락하며, 매너 온도가 높을수록 다음
+            매칭에서 수락될 확률이 높아집니다.
           </div>
         </div>
 
         <!-- FAQ 4 -->
         <div class="border-b border-white/10 last:border-0">
-          <button class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
+          <button
+            class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
             <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
+              <span
+                class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
               <span class="text-sm font-semibold">QR 출석 인증은 어떻게 하나요?</span>
             </div>
-            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
@@ -1690,19 +1706,98 @@
 
         <!-- FAQ 5 -->
         <div class="border-b border-white/10 last:border-0">
-          <button class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
+          <button
+            class="faq-toggle w-full flex items-center justify-between py-4 text-left transition-colors hover:text-white text-gray-300">
             <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
+              <span
+                class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center text-xs flex-shrink-0">Q</span>
               <span class="text-sm font-semibold">경기 중 다치면 상해 보험 처리가 가능한가요?</span>
             </div>
-            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-gray-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="faq-content hidden px-9 pb-4 text-sm text-gray-400 leading-relaxed mt-2">
-            현재 동네용병 서비스는 매칭 플랫폼만을 제공하며, 직접적인 상해 보험을 지원하지 않습니다. 경기 중 부상을 방지하기 위해 충분한 준비 운동을 부탁드리며, 개별적으로 스포츠 안전 공제 보험 등에 가입하시는 것을 권장합니다.
+            현재 동네용병 서비스는 매칭 플랫폼만을 제공하며, 직접적인 상해 보험을 지원하지 않습니다. 경기 중 부상을 방지하기 위해 충분한 준비 운동을 부탁드리며, 개별적으로 스포츠 안전 공제 보험 등에
+            가입하시는 것을 권장합니다.
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================
+       이용 가이드 모달
+  ===================================== -->
+  <div id="guide-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+    <!-- 백드롭 -->
+    <div id="guide-modal-backdrop" class="absolute inset-0"
+      style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
+
+    <!-- 모달 패널 -->
+    <div
+      class="relative w-full max-w-2xl glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden"
+      style="animation:slideUp .35s ease-out forwards; max-height: 85vh; display: flex; flex-direction: column;">
+      
+      <!-- 헤더 그라디언트 띠 -->
+      <div class="h-1 w-full flex-shrink-0" style="background:linear-gradient(90deg,#6C3AE4,#00C6FF);"></div>
+
+      <!-- 헤더 영역 -->
+      <div class="px-6 pt-6 pb-4 border-b border-white/5 flex-shrink-0 flex items-center justify-between">
+        <h2 class="font-display font-black text-xl text-white">이용 가이드 및 유의사항</h2>
+        <button id="guide-modal-close"
+          class="w-8 h-8 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+          aria-label="닫기">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- 가이드 내용 -->
+      <div class="p-6 overflow-y-auto space-y-8">
+        
+        <!-- 섹션 1 -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xl">&#127777;&#65039;</span>
+            <h3 class="font-bold text-white">매너가 스포츠를 만듭니다</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-400 pl-6 list-disc marker:text-brand-500">
+            <li>상대방을 존중하는 언행을 사용해 주세요. 과도한 승부욕이나 욕설은 제재 대상이 됩니다.</li>
+            <li>경기 시작 시간 <strong class="text-white">10분 전</strong>에는 도착하여 준비해 주세요. 시간 엄수는 기본 매너입니다.</li>
+            <li>무단 불참(노쇼) 시 보증금이 귀속되며, 매너 온도가 크게 하락하여 영구 이용 정지될 수 있습니다.</li>
+          </ul>
+        </div>
+
+        <!-- 섹션 2 -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xl">&#128680;</span>
+            <h3 class="font-bold text-white">안전 유의사항</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-400 pl-6 list-disc marker:text-warn">
+            <li>경기 전 반드시 개인적으로 충분한 <strong class="text-white">준비 운동</strong>을 해주세요.</li>
+            <li>경기 중 발생한 부상이나 상해에 대해 동네용병은 법적 책임을 지지 않습니다. <span class="text-[11px] bg-dark-700 px-2 py-0.5 rounded-md ml-1">개인 스포츠 보험 가입 권장</span></li>
+            <li>장신구, 날카로운 물건 등은 경기 전 반드시 해제해 주세요.</li>
+            <li>각 구장의 시설 이용 수칙을 엄수해 주시기 바랍니다.</li>
+          </ul>
+        </div>
+
+        <!-- 섹션 3 -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xl">&#128179;</span>
+            <h3 class="font-bold text-white">결제 및 환불 가이드</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-400 pl-6 list-disc marker:text-accent">
+            <li>모든 참가비 결제와 정산은 동네용병 앱 내 <strong class="text-white">안전 결제 시스템</strong>을 통해서만 진행해 주세요. (개인 계좌 송금 요구 시 신고)</li>
+            <li>신청 거절 시 즉시 100% 환불됩니다.</li>
+            <li>경기 시작 <strong class="text-white">24시간 전</strong>: 100% 환불 / <strong class="text-white">12시간 전</strong>: 50% 환불 / 그 이후: 환불 불가</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </div>
@@ -2072,7 +2167,7 @@
         const content = btn.nextElementSibling;
         const icon = btn.querySelector('.faq-icon');
         const isOpen = !content.classList.contains('hidden');
-        
+
         if (isOpen) {
           content.classList.add('hidden');
           icon.style.transform = 'rotate(0deg)';
@@ -2085,17 +2180,37 @@
 
     // ── 푸터 링크 연결 ──────────────────────────────
     const footerFindMatch = document.getElementById('footer-find-match');
-    if(footerFindMatch) {
+    if (footerFindMatch) {
       footerFindMatch.addEventListener('click', (e) => { e.preventDefault(); openAllPostsModal('all'); });
     }
     const footerHostMatch = document.getElementById('footer-host-match');
-    if(footerHostMatch) {
+    if (footerHostMatch) {
       footerHostMatch.addEventListener('click', (e) => { e.preventDefault(); openHostModal(); });
     }
     const footerFaq = document.getElementById('footer-faq');
-    if(footerFaq) {
+    if (footerFaq) {
       footerFaq.addEventListener('click', (e) => { e.preventDefault(); openFaqModal(); });
     }
+    const footerGuide = document.getElementById('footer-guide');
+    if (footerGuide) {
+      footerGuide.addEventListener('click', (e) => { e.preventDefault(); openGuideModal(); });
+    }
+
+    // ── 이용 가이드 모달 ──────────────────────────────
+    function openGuideModal() {
+      document.getElementById('guide-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGuideModal() {
+      document.getElementById('guide-modal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    const guideCloseBtn = document.getElementById('guide-modal-close');
+    const guideBackdrop = document.getElementById('guide-modal-backdrop');
+    if(guideCloseBtn) guideCloseBtn.addEventListener('click', closeGuideModal);
+    if(guideBackdrop) guideBackdrop.addEventListener('click', closeGuideModal);
 
     // 스무스 스크롤
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
