@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +13,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet" />
 
   <script>
     tailwind.config = {
@@ -20,7 +23,7 @@
         extend: {
           colors: {
             brand: {
-              50:  '#f0ebff',
+              50: '#f0ebff',
               100: '#ddd3ff',
               200: '#bfaaff',
               300: '#9d7aff',
@@ -32,8 +35,8 @@
               900: '#200070',
             },
             accent: '#00C6FF',
-            neon:   '#39FF14',
-            warn:   '#FF6B35',
+            neon: '#39FF14',
+            warn: '#FF6B35',
             dark: {
               950: '#080812',
               900: '#0D0D1F',
@@ -47,36 +50,36 @@
             display: ['Outfit', 'sans-serif'],
           },
           animation: {
-            'pulse-slow':   'pulse 3s cubic-bezier(0.4,0,0.6,1) infinite',
-            'float':        'float 6s ease-in-out infinite',
-            'glow':         'glow 2s ease-in-out infinite alternate',
-            'slide-up':     'slideUp 0.6s ease-out forwards',
-            'fade-in':      'fadeIn 0.8s ease-out forwards',
-            'ping-slow':    'ping 2s cubic-bezier(0,0,0.2,1) infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4,0,0.6,1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'slide-up': 'slideUp 0.6s ease-out forwards',
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'ping-slow': 'ping 2s cubic-bezier(0,0,0.2,1) infinite',
           },
           keyframes: {
             float: {
               '0%, 100%': { transform: 'translateY(0)' },
-              '50%':      { transform: 'translateY(-12px)' },
+              '50%': { transform: 'translateY(-12px)' },
             },
             glow: {
               from: { 'box-shadow': '0 0 10px #6C3AE4, 0 0 20px #6C3AE4' },
-              to:   { 'box-shadow': '0 0 20px #00C6FF, 0 0 40px #00C6FF' },
+              to: { 'box-shadow': '0 0 20px #00C6FF, 0 0 40px #00C6FF' },
             },
             slideUp: {
               from: { opacity: '0', transform: 'translateY(30px)' },
-              to:   { opacity: '1', transform: 'translateY(0)' },
+              to: { opacity: '1', transform: 'translateY(0)' },
             },
             fadeIn: {
               from: { opacity: '0' },
-              to:   { opacity: '1' },
+              to: { opacity: '1' },
             },
           },
           backgroundImage: {
-            'hero-grad':  'linear-gradient(135deg, #080812 0%, #0D0D1F 50%, #13132B 100%)',
-            'card-grad':  'linear-gradient(145deg, rgba(28,28,56,0.9) 0%, rgba(19,19,43,0.95) 100%)',
+            'hero-grad': 'linear-gradient(135deg, #080812 0%, #0D0D1F 50%, #13132B 100%)',
+            'card-grad': 'linear-gradient(145deg, rgba(28,28,56,0.9) 0%, rgba(19,19,43,0.95) 100%)',
             'brand-grad': 'linear-gradient(135deg, #6C3AE4 0%, #00C6FF 100%)',
-            'warm-grad':  'linear-gradient(135deg, #FF6B35 0%, #FFB347 100%)',
+            'warm-grad': 'linear-gradient(135deg, #FF6B35 0%, #FFB347 100%)',
           },
         },
       },
@@ -84,17 +87,33 @@
   </script>
 
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Noto Sans KR', sans-serif;
       background-color: #080812;
       color: #E8E8F0;
       overflow-x: hidden;
     }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0D0D1F; }
-    ::-webkit-scrollbar-thumb { background: #6C3AE4; border-radius: 3px; }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0D0D1F;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #6C3AE4;
+      border-radius: 3px;
+    }
 
     .glass {
       background: rgba(19, 19, 43, 0.7);
@@ -102,97 +121,146 @@
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(108, 58, 228, 0.2);
     }
+
     .glass-light {
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
+
     .text-gradient {
       background: linear-gradient(135deg, #6C3AE4 0%, #00C6FF 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .text-gradient-warm {
       background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .btn-primary {
       background: linear-gradient(135deg, #6C3AE4 0%, #00C6FF 100%);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
+
     .btn-primary::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .btn-primary:hover::after { opacity: 1; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(108,58,228,0.4); }
-    .btn-primary:active { transform: translateY(0); }
 
-    .card-hover { transition: all 0.3s ease; cursor: pointer; }
+    .btn-primary:hover::after {
+      opacity: 1;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(108, 58, 228, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
     .card-hover:hover {
       transform: translateY(-4px);
       border-color: rgba(108, 58, 228, 0.5) !important;
       box-shadow: 0 20px 40px rgba(108, 58, 228, 0.2);
     }
+
     .nav-blur {
       background: rgba(8, 8, 18, 0.85);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid rgba(108, 58, 228, 0.15);
     }
+
     .hero-bg {
       background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108,58,228,0.25) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 80% 50%, rgba(0,198,255,0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108, 58, 228, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 80% 50%, rgba(0, 198, 255, 0.1) 0%, transparent 50%),
         #080812;
     }
+
     .map-mock {
       background:
-        linear-gradient(180deg, rgba(13,13,31,0) 0%, rgba(13,13,31,0.8) 100%),
+        linear-gradient(180deg, rgba(13, 13, 31, 0) 0%, rgba(13, 13, 31, 0.8) 100%),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%231C1C38" stroke-width="1"/></pattern></defs><rect width="400" height="400" fill="%230D0D1F"/><rect width="400" height="400" fill="url(%23g)"/></svg>');
     }
-    .badge-live { position: relative; }
+
+    .badge-live {
+      position: relative;
+    }
+
     .badge-live::before {
       content: '';
       position: absolute;
       inset: -4px;
       border-radius: 50%;
       background: rgba(255, 107, 53, 0.4);
-      animation: ping 1.5s cubic-bezier(0,0,0.2,1) infinite;
+      animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
+
     .bottom-nav {
       background: rgba(13, 13, 31, 0.95);
       backdrop-filter: blur(20px);
       border-top: 1px solid rgba(108, 58, 228, 0.2);
     }
-    .sport-chip { transition: all 0.25s ease; cursor: pointer; }
-    .sport-chip:hover, .sport-chip.active {
+
+    .sport-chip {
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .sport-chip:hover,
+    .sport-chip.active {
       background: linear-gradient(135deg, #6C3AE4, #00C6FF);
       border-color: transparent;
       color: white;
       transform: scale(1.05);
     }
+
     @keyframes scrollHint {
-      0%   { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(10px); }
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
     }
-    .scroll-hint { animation: scrollHint 1.5s ease-in-out infinite; }
+
+    .scroll-hint {
+      animation: scrollHint 1.5s ease-in-out infinite;
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
@@ -203,7 +271,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="#" class="flex items-center gap-2.5 group" id="nav-logo">
-          <div class="w-9 h-9 rounded-xl bg-brand-grad flex items-center justify-center shadow-lg shadow-brand-500/30 group-hover:shadow-brand-500/50 transition-all duration-300">
+          <div
+            class="w-9 h-9 rounded-xl bg-brand-grad flex items-center justify-center shadow-lg shadow-brand-500/30 group-hover:shadow-brand-500/50 transition-all duration-300">
             <span class="text-white text-lg font-black font-display leading-none">&#9889;</span>
           </div>
           <div class="leading-tight">
@@ -213,18 +282,24 @@
         </a>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href="#features" class="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">기능 소개</a>
-          <a href="#how-it-works" class="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">이용 방법</a>
-          <a href="#matches" class="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">모집 현황</a>
-          <a href="#cta" class="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">앱 다운로드</a>
+          <a href="#features"
+            class="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">기능 소개</a>
+          <a href="#how-it-works"
+            class="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">이용 방법</a>
+          <a href="#matches"
+            class="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">모집 현황</a>
+          <a href="#cta" class="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">앱
+            다운로드</a>
         </div>
 
         <div class="flex items-center gap-3">
-          <button id="nav-login-btn" class="hidden md:block text-sm font-medium text-gray-300 hover:text-white transition-colors">로그인</button>
-          <button id="nav-signup-btn" class="btn-primary text-sm font-bold text-white px-5 py-2.5 rounded-xl shadow-lg">무료 시작</button>
+          <button id="nav-login-btn"
+            class="hidden md:block text-sm font-medium text-gray-300 hover:text-white transition-colors">로그인</button>
+          <button id="nav-signup-btn"
+            class="btn-primary text-sm font-bold text-white px-5 py-2.5 rounded-xl shadow-lg">무료 시작</button>
           <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg glass-light" aria-label="메뉴 열기">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
@@ -233,12 +308,21 @@
 
     <div id="mobile-menu" class="hidden md:hidden glass border-t border-brand-500/20">
       <div class="px-4 py-4 space-y-1">
-        <a href="#features" class="mobile-menu-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-brand-500/20 hover:text-white transition-all">&#9889; 기능 소개</a>
-        <a href="#how-it-works" class="mobile-menu-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-brand-500/20 hover:text-white transition-all">&#128506; 이용 방법</a>
-        <a href="#matches" class="mobile-menu-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-brand-500/20 hover:text-white transition-all">&#9917; 모집 현황</a>
-        <a href="#cta" class="mobile-menu-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-brand-500/20 hover:text-white transition-all">&#128241; 앱 다운로드</a>
+        <a href="#features"
+          class="mobile-menu-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-brand-500/20 hover:text-white transition-all">&#9889;
+          기능 소개</a>
+        <a href="#how-it-works"
+          class="mobile-menu-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-brand-500/20 hover:text-white transition-all">&#128506;
+          이용 방법</a>
+        <a href="#matches"
+          class="mobile-menu-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-brand-500/20 hover:text-white transition-all">&#9917;
+          모집 현황</a>
+        <a href="#cta"
+          class="mobile-menu-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-brand-500/20 hover:text-white transition-all">&#128241;
+          앱 다운로드</a>
         <div class="pt-2 border-t border-white/5">
-          <button id="mobile-login-btn" class="w-full text-left px-4 py-3 text-sm text-gray-400 hover:text-white transition-colors">로그인</button>
+          <button id="mobile-login-btn"
+            class="w-full text-left px-4 py-3 text-sm text-gray-400 hover:text-white transition-colors">로그인</button>
         </div>
       </div>
     </div>
@@ -257,31 +341,35 @@
         <div class="text-center lg:text-left animate-fade-in">
           <div class="inline-flex items-center gap-2.5 glass rounded-full px-4 py-2 mb-6 border border-warn/30">
             <div class="badge-live w-2.5 h-2.5 rounded-full bg-warn"></div>
-            <span class="text-xs font-semibold text-warn tracking-wide">LIVE &middot; 지금 내 주변 23개 경기 모집 중</span>
+            <span class="text-xs font-semibold text-warn tracking-wide">LIVE &middot; 지금 내 주변에 모집 중인 경기 확인하기</span>
           </div>
 
           <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6">
-            <span class="text-white">오늘 경기,</span><br/>
-            <span class="text-gradient">인원 부족?</span><br/>
+            <span class="text-white">오늘 경기</span><br />
+            <span class="text-gradient">인원 부족하다면,</span><br />
             <span class="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mt-2 block">
-              5분 안에 채워드립니다.
+              5분 안에 채워드려요.
             </span>
           </h1>
 
           <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
-            GPS 기반 실시간 매칭 &middot; 에스크로 안심 결제 &middot; 매너 온도 시스템.<br/>
+            GPS 기반 실시간 매칭 &middot; 에스크로 안심 결제 &middot; 매너 온도 시스템.<br />
             <strong class="text-white">풋살, 농구, 배드민턴</strong> &mdash; 어떤 종목이든 동네에서 바로.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-            <button id="hero-find-btn" class="btn-primary font-bold text-white text-base px-8 py-4 rounded-2xl shadow-xl shadow-brand-500/30 flex items-center justify-center gap-2.5">
+            <button id="hero-find-btn"
+              class="btn-primary font-bold text-white text-base px-8 py-4 rounded-2xl shadow-xl shadow-brand-500/30 flex items-center justify-center gap-2.5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
               내 주변 경기 찾기
             </button>
-            <button id="hero-host-btn" class="glass-light font-semibold text-white text-base px-8 py-4 rounded-2xl flex items-center justify-center gap-2.5 hover:border-brand-400/50 transition-all duration-300 hover:bg-brand-500/10">
+            <button id="hero-host-btn"
+              class="glass-light font-semibold text-white text-base px-8 py-4 rounded-2xl flex items-center justify-center gap-2.5 hover:border-brand-400/50 transition-all duration-300 hover:bg-brand-500/10">
               <span class="text-xl">&#9889;</span>
               용병 모집하기
             </button>
@@ -308,12 +396,16 @@
         <!-- 폰 목업 -->
         <div class="flex justify-center lg:justify-end animate-float">
           <div class="relative w-[300px] sm:w-[340px]">
-            <div class="relative glass rounded-[40px] border-2 border-brand-500/30 overflow-hidden shadow-2xl shadow-brand-500/20" style="box-shadow: 0 0 60px rgba(108,58,228,0.2), 0 0 120px rgba(108,58,228,0.1);">
+            <div
+              class="relative glass rounded-[40px] border-2 border-brand-500/30 overflow-hidden shadow-2xl shadow-brand-500/20"
+              style="box-shadow: 0 0 60px rgba(108,58,228,0.2), 0 0 120px rgba(108,58,228,0.1);">
 
               <!-- 상태바 -->
               <div class="flex justify-between items-center px-6 pt-4 pb-2 bg-dark-900/80 relative">
                 <span class="text-xs font-semibold text-white">9:41</span>
-                <div class="w-20 h-6 bg-dark-900 rounded-full mx-auto absolute left-1/2 -translate-x-1/2 top-3 border border-brand-500/20"></div>
+                <div
+                  class="w-20 h-6 bg-dark-900 rounded-full mx-auto absolute left-1/2 -translate-x-1/2 top-3 border border-brand-500/20">
+                </div>
                 <div class="flex gap-1.5 items-center">
                   <div class="w-3.5 h-3.5 flex flex-col gap-0.5 justify-center">
                     <div class="h-0.5 w-3.5 bg-white rounded"></div>
@@ -340,60 +432,75 @@
               <!-- 맵 영역 -->
               <div class="map-mock relative h-64 overflow-hidden">
                 <svg class="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 300 256">
-                  <rect x="0" y="100" width="300" height="8" fill="#1C1C38"/>
-                  <rect x="0" y="160" width="300" height="6" fill="#1C1C38"/>
-                  <rect x="80" y="0" width="8" height="256" fill="#1C1C38"/>
-                  <rect x="180" y="0" width="6" height="256" fill="#1C1C38"/>
-                  <rect x="10" y="10" width="60" height="80" rx="3" fill="#13132B"/>
-                  <rect x="100" y="10" width="70" height="80" rx="3" fill="#13132B"/>
-                  <rect x="200" y="10" width="80" height="80" rx="3" fill="#13132B"/>
-                  <rect x="10" y="118" width="60" height="35" rx="3" fill="#13132B"/>
-                  <rect x="100" y="118" width="70" height="35" rx="3" fill="#13132B"/>
-                  <rect x="10" y="175" width="60" height="70" rx="3" fill="#13132B"/>
-                  <rect x="100" y="175" width="70" height="70" rx="3" fill="#13132B"/>
-                  <rect x="200" y="175" width="80" height="70" rx="3" fill="#13132B"/>
+                  <rect x="0" y="100" width="300" height="8" fill="#1C1C38" />
+                  <rect x="0" y="160" width="300" height="6" fill="#1C1C38" />
+                  <rect x="80" y="0" width="8" height="256" fill="#1C1C38" />
+                  <rect x="180" y="0" width="6" height="256" fill="#1C1C38" />
+                  <rect x="10" y="10" width="60" height="80" rx="3" fill="#13132B" />
+                  <rect x="100" y="10" width="70" height="80" rx="3" fill="#13132B" />
+                  <rect x="200" y="10" width="80" height="80" rx="3" fill="#13132B" />
+                  <rect x="10" y="118" width="60" height="35" rx="3" fill="#13132B" />
+                  <rect x="100" y="118" width="70" height="35" rx="3" fill="#13132B" />
+                  <rect x="10" y="175" width="60" height="70" rx="3" fill="#13132B" />
+                  <rect x="100" y="175" width="70" height="70" rx="3" fill="#13132B" />
+                  <rect x="200" y="175" width="80" height="70" rx="3" fill="#13132B" />
                 </svg>
 
                 <!-- 마커: 풋살 (긴급) -->
                 <div class="absolute" style="top:30%;left:25%;">
                   <div class="relative">
                     <div class="absolute -inset-2 rounded-full bg-warn/30 animate-ping-slow"></div>
-                    <div class="w-10 h-10 rounded-full bg-warn flex items-center justify-center text-white text-base shadow-lg shadow-warn/50 relative z-10">&#9917;</div>
-                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-warn text-white text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">모집중 4/5</div>
+                    <div
+                      class="w-10 h-10 rounded-full bg-warn flex items-center justify-center text-white text-base shadow-lg shadow-warn/50 relative z-10">
+                      &#9917;</div>
+                    <div
+                      class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-warn text-white text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                      모집중 4/5</div>
                   </div>
                 </div>
 
                 <!-- 마커: 농구 -->
                 <div class="absolute" style="top:50%;left:62%;">
                   <div class="relative">
-                    <div class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center text-white text-sm shadow-lg shadow-brand-500/50">&#127936;</div>
-                    <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">마감임박</div>
+                    <div
+                      class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center text-white text-sm shadow-lg shadow-brand-500/50">
+                      &#127936;</div>
+                    <div
+                      class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                      마감임박</div>
                   </div>
                 </div>
 
                 <!-- 마커: 배드민턴 (비활성) -->
                 <div class="absolute" style="top:20%;left:67%;">
-                  <div class="w-8 h-8 rounded-full bg-dark-600/80 border border-white/20 flex items-center justify-center text-sm">&#127992;</div>
+                  <div
+                    class="w-8 h-8 rounded-full bg-dark-600/80 border border-white/20 flex items-center justify-center text-sm">
+                    &#127992;</div>
                 </div>
 
                 <!-- 내 위치 -->
                 <div class="absolute" style="top:45%;left:45%;">
                   <div class="relative">
                     <div class="absolute -inset-3 rounded-full bg-accent/20 animate-pulse-slow"></div>
-                    <div class="w-5 h-5 rounded-full bg-accent border-2 border-white shadow-lg shadow-accent/60 relative z-10"></div>
+                    <div
+                      class="w-5 h-5 rounded-full bg-accent border-2 border-white shadow-lg shadow-accent/60 relative z-10">
+                    </div>
                   </div>
                 </div>
 
                 <!-- 반경 원 -->
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="top:45%;left:45%;transform:translate(-50%,-50%)">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                  style="top:45%;left:45%;transform:translate(-50%,-50%)">
                   <div class="w-28 h-28 rounded-full border border-accent/20"></div>
                 </div>
 
                 <!-- 거리 필터 -->
                 <div class="absolute top-3 left-1/2 -translate-x-1/2 flex gap-1.5">
                   <button class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-brand-500 text-white">1km</button>
-                  <button class="text-[10px] font-medium px-2.5 py-1 rounded-full glass-light text-gray-300">3km</button>
-                  <button class="text-[10px] font-medium px-2.5 py-1 rounded-full glass-light text-gray-300">5km</button>
+                  <button
+                    class="text-[10px] font-medium px-2.5 py-1 rounded-full glass-light text-gray-300">3km</button>
+                  <button
+                    class="text-[10px] font-medium px-2.5 py-1 rounded-full glass-light text-gray-300">5km</button>
                 </div>
               </div>
 
@@ -406,7 +513,8 @@
 
                 <!-- 미니 카드 1 -->
                 <div class="glass rounded-xl p-3 flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-warn/20 flex items-center justify-center flex-shrink-0 text-lg">&#9917;</div>
+                  <div class="w-10 h-10 rounded-xl bg-warn/20 flex items-center justify-center flex-shrink-0 text-lg">
+                    &#9917;</div>
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-1.5 mb-0.5">
                       <span class="text-[10px] font-bold text-warn bg-warn/15 px-1.5 py-0.5 rounded-full">D-2시간</span>
@@ -415,62 +523,91 @@
                     <p class="text-xs font-semibold text-white truncate">풋살 용병 1명 급구합니다</p>
                     <div class="flex items-center gap-2 mt-0.5">
                       <div class="flex -space-x-1">
-                        <div class="w-4 h-4 rounded-full bg-brand-400 text-white text-[8px] flex items-center justify-center border border-dark-800">A</div>
-                        <div class="w-4 h-4 rounded-full bg-accent/80 text-white text-[8px] flex items-center justify-center border border-dark-800">B</div>
-                        <div class="w-4 h-4 rounded-full bg-warn/80 text-white text-[8px] flex items-center justify-center border border-dark-800">C</div>
+                        <div
+                          class="w-4 h-4 rounded-full bg-brand-400 text-white text-[8px] flex items-center justify-center border border-dark-800">
+                          A</div>
+                        <div
+                          class="w-4 h-4 rounded-full bg-accent/80 text-white text-[8px] flex items-center justify-center border border-dark-800">
+                          B</div>
+                        <div
+                          class="w-4 h-4 rounded-full bg-warn/80 text-white text-[8px] flex items-center justify-center border border-dark-800">
+                          C</div>
                       </div>
                       <span class="text-[10px] text-gray-500">4/5명 &middot; &#8361;8,000</span>
                     </div>
                   </div>
-                  <button class="flex-shrink-0 bg-brand-grad text-white text-[10px] font-bold px-2.5 py-1.5 rounded-lg">신청</button>
+                  <button
+                    class="flex-shrink-0 bg-brand-grad text-white text-[10px] font-bold px-2.5 py-1.5 rounded-lg">신청</button>
                 </div>
 
                 <!-- 미니 카드 2 -->
                 <div class="glass rounded-xl p-3 flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-lg">&#127936;</div>
+                  <div
+                    class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-lg">
+                    &#127936;</div>
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-1.5 mb-0.5">
-                      <span class="text-[10px] font-bold text-accent bg-accent/15 px-1.5 py-0.5 rounded-full">내일 오후</span>
+                      <span class="text-[10px] font-bold text-accent bg-accent/15 px-1.5 py-0.5 rounded-full">내일
+                        오후</span>
                       <span class="text-[10px] text-gray-400">0.8km</span>
                     </div>
                     <p class="text-xs font-semibold text-white truncate">주말 농구 2vs2 게임</p>
                     <span class="text-[10px] text-gray-500">2/4명 &middot; 무료</span>
                   </div>
-                  <button class="flex-shrink-0 glass-light text-gray-300 text-[10px] font-medium px-2.5 py-1.5 rounded-lg">보기</button>
+                  <button
+                    class="flex-shrink-0 glass-light text-gray-300 text-[10px] font-medium px-2.5 py-1.5 rounded-lg">보기</button>
                 </div>
               </div>
 
               <!-- 바텀 탭바 -->
               <div class="bottom-nav flex justify-around px-4 py-3">
                 <button class="flex flex-col items-center gap-0.5">
-                  <svg class="w-5 h-5 text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                  <svg class="w-5 h-5 text-brand-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                  </svg>
                   <span class="text-[9px] text-brand-400 font-semibold">홈</span>
                 </button>
                 <button class="flex flex-col items-center gap-0.5">
-                  <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                  <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
                   <span class="text-[9px] text-gray-600">탐색</span>
                 </button>
                 <div class="relative -mt-5">
-                  <div class="w-12 h-12 rounded-full bg-brand-grad flex items-center justify-center shadow-lg shadow-brand-500/50">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                  <div
+                    class="w-12 h-12 rounded-full bg-brand-grad flex items-center justify-center shadow-lg shadow-brand-500/50">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
                   </div>
                 </div>
                 <button class="flex flex-col items-center gap-0.5">
-                  <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                  <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                  </svg>
                   <span class="text-[9px] text-gray-600">알림</span>
                 </button>
                 <button class="flex flex-col items-center gap-0.5">
-                  <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                  <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
                   <span class="text-[9px] text-gray-600">프로필</span>
                 </button>
               </div>
             </div>
 
             <!-- 플로팅 뱃지 -->
-            <div class="absolute -right-4 top-16 glass rounded-2xl px-3 py-2 text-xs font-bold text-white border border-neon/30 shadow-lg shadow-neon/20 animate-float" style="animation-delay:-1s;">
+            <div
+              class="absolute -right-4 top-16 glass rounded-2xl px-3 py-2 text-xs font-bold text-white border border-neon/30 shadow-lg shadow-neon/20 animate-float"
+              style="animation-delay:-1s;">
               &#128293; 매너온도 42&deg;
             </div>
-            <div class="absolute -left-6 bottom-24 glass rounded-2xl px-3 py-2 text-xs font-bold text-white border border-accent/30 shadow-lg shadow-accent/20 animate-float" style="animation-delay:-2s;">
+            <div
+              class="absolute -left-6 bottom-24 glass rounded-2xl px-3 py-2 text-xs font-bold text-white border border-accent/30 shadow-lg shadow-accent/20 animate-float"
+              style="animation-delay:-2s;">
               &#9989; 즉시 매칭!
             </div>
           </div>
@@ -484,7 +621,7 @@
       <span class="text-xs text-gray-600">스크롤하여 더 알아보기</span>
       <div class="scroll-hint">
         <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </div>
     </div>
@@ -496,13 +633,27 @@
     <div class="max-w-7xl mx-auto px-4">
       <p class="text-center text-xs font-semibold text-gray-500 uppercase tracking-widest mb-6">지원 종목</p>
       <div id="sport-chips" class="flex flex-wrap justify-center gap-3">
-        <button class="sport-chip active glass px-5 py-2.5 rounded-full text-sm font-semibold text-white border border-brand-500/30" data-sport="all">&#127942; 전체</button>
-        <button class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10" data-sport="futsal">&#9917; 풋살</button>
-        <button class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10" data-sport="basketball">&#127936; 농구</button>
-        <button class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10" data-sport="badminton">&#127992; 배드민턴</button>
-        <button class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10" data-sport="tennis">&#127934; 테니스</button>
-        <button class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10" data-sport="volleyball">&#127952; 배구</button>
-        <button class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10" data-sport="baseball">&#9918; 야구</button>
+        <button
+          class="sport-chip active glass px-5 py-2.5 rounded-full text-sm font-semibold text-white border border-brand-500/30"
+          data-sport="all">&#127942; 전체</button>
+        <button
+          class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10"
+          data-sport="futsal">&#9917; 풋살</button>
+        <button
+          class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10"
+          data-sport="basketball">&#127936; 농구</button>
+        <button
+          class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10"
+          data-sport="badminton">&#127992; 배드민턴</button>
+        <button
+          class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10"
+          data-sport="tennis">&#127934; 테니스</button>
+        <button
+          class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10"
+          data-sport="volleyball">&#127952; 배구</button>
+        <button
+          class="sport-chip glass px-5 py-2.5 rounded-full text-sm font-medium text-gray-300 border border-white/10"
+          data-sport="baseball">&#9918; 야구</button>
       </div>
     </div>
   </section>
@@ -528,10 +679,13 @@
         <article class="card-hover glass rounded-2xl p-5 border border-white/5" id="match-card-1">
           <div class="flex justify-between items-start mb-4">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-2xl bg-warn/20 flex items-center justify-center text-2xl flex-shrink-0">&#9917;</div>
+              <div class="w-12 h-12 rounded-2xl bg-warn/20 flex items-center justify-center text-2xl flex-shrink-0">
+                &#9917;</div>
               <div>
                 <div class="flex items-center gap-2 mb-0.5">
-                  <span class="text-[10px] font-black text-warn bg-warn/15 px-2 py-0.5 rounded-full tracking-wide">&#9889; 긴급</span>
+                  <span
+                    class="text-[10px] font-black text-warn bg-warn/15 px-2 py-0.5 rounded-full tracking-wide">&#9889;
+                    긴급</span>
                   <span class="text-[10px] text-gray-500">2시간 후</span>
                 </div>
                 <h3 class="font-bold text-sm text-white">강남 풋살파크 A구장</h3>
@@ -560,7 +714,9 @@
           </div>
           <div class="flex items-center justify-between pt-3 border-t border-white/5">
             <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-full bg-brand-grad flex items-center justify-center text-xs font-bold text-white">김</div>
+              <div
+                class="w-7 h-7 rounded-full bg-brand-grad flex items-center justify-center text-xs font-bold text-white">
+                김</div>
               <div>
                 <p class="text-xs font-semibold text-white">김민준 팀장</p>
                 <div class="flex items-center gap-1">
@@ -570,7 +726,8 @@
                 </div>
               </div>
             </div>
-            <button class="btn-primary text-xs font-bold text-white px-5 py-2.5 rounded-xl" id="apply-btn-1">신청하기</button>
+            <button class="btn-primary text-xs font-bold text-white px-5 py-2.5 rounded-xl"
+              id="apply-btn-1">신청하기</button>
           </div>
         </article>
 
@@ -578,10 +735,14 @@
         <article class="card-hover glass rounded-2xl p-5 border border-white/5" id="match-card-2">
           <div class="flex justify-between items-start mb-4">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-2xl flex-shrink-0">&#127936;</div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-2xl flex-shrink-0">
+                &#127936;</div>
               <div>
                 <div class="flex items-center gap-2 mb-0.5">
-                  <span class="text-[10px] font-black text-accent bg-accent/15 px-2 py-0.5 rounded-full tracking-wide">오늘 저녁</span>
+                  <span
+                    class="text-[10px] font-black text-accent bg-accent/15 px-2 py-0.5 rounded-full tracking-wide">오늘
+                    저녁</span>
                   <span class="text-[10px] text-gray-500">7시간 후</span>
                 </div>
                 <h3 class="font-bold text-sm text-white">방이동 실내 농구장</h3>
@@ -610,7 +771,9 @@
           </div>
           <div class="flex items-center justify-between pt-3 border-t border-white/5">
             <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-full bg-accent/30 flex items-center justify-center text-xs font-bold text-white">이</div>
+              <div
+                class="w-7 h-7 rounded-full bg-accent/30 flex items-center justify-center text-xs font-bold text-white">
+                이</div>
               <div>
                 <p class="text-xs font-semibold text-white">이지현 팀장</p>
                 <div class="flex items-center gap-1">
@@ -620,7 +783,8 @@
                 </div>
               </div>
             </div>
-            <button class="btn-primary text-xs font-bold text-white px-5 py-2.5 rounded-xl" id="apply-btn-2">신청하기</button>
+            <button class="btn-primary text-xs font-bold text-white px-5 py-2.5 rounded-xl"
+              id="apply-btn-2">신청하기</button>
           </div>
         </article>
 
@@ -628,10 +792,14 @@
         <article class="card-hover glass rounded-2xl p-5 border border-white/5" id="match-card-3">
           <div class="flex justify-between items-start mb-4">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-2xl flex-shrink-0">&#127992;</div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-2xl flex-shrink-0">
+                &#127992;</div>
               <div>
                 <div class="flex items-center gap-2 mb-0.5">
-                  <span class="text-[10px] font-black text-purple-400 bg-purple-500/15 px-2 py-0.5 rounded-full tracking-wide">내일 오전</span>
+                  <span
+                    class="text-[10px] font-black text-purple-400 bg-purple-500/15 px-2 py-0.5 rounded-full tracking-wide">내일
+                    오전</span>
                   <span class="text-[10px] text-gray-500">24시간 후</span>
                 </div>
                 <h3 class="font-bold text-sm text-white">서초 배드민턴센터 2코트</h3>
@@ -659,7 +827,9 @@
           </div>
           <div class="flex items-center justify-between pt-3 border-t border-white/5">
             <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-full bg-purple-500/30 flex items-center justify-center text-xs font-bold text-white">박</div>
+              <div
+                class="w-7 h-7 rounded-full bg-purple-500/30 flex items-center justify-center text-xs font-bold text-white">
+                박</div>
               <div>
                 <p class="text-xs font-semibold text-white">박성훈 팀장</p>
                 <div class="flex items-center gap-1">
@@ -669,17 +839,19 @@
                 </div>
               </div>
             </div>
-            <button class="btn-primary text-xs font-bold text-white px-5 py-2.5 rounded-xl" id="apply-btn-3">신청하기</button>
+            <button class="btn-primary text-xs font-bold text-white px-5 py-2.5 rounded-xl"
+              id="apply-btn-3">신청하기</button>
           </div>
         </article>
 
       </div>
 
       <div class="text-center mt-10 reveal">
-        <button id="see-all-btn" class="glass-light border border-white/10 hover:border-brand-400/50 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:bg-brand-500/10 inline-flex items-center gap-2">
+        <button id="see-all-btn"
+          class="glass-light border border-white/10 hover:border-brand-400/50 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:bg-brand-500/10 inline-flex items-center gap-2">
           전체 모집글 보기
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </button>
       </div>
@@ -693,7 +865,7 @@
       <div class="text-center mb-16 reveal">
         <p class="text-xs font-bold text-brand-400 uppercase tracking-widest mb-3">핵심 기능</p>
         <h2 class="font-display font-black text-3xl sm:text-4xl text-white">
-          경기부터 정산까지,<br/><span class="text-gradient">모든 걸 해결합니다</span>
+          경기부터 정산까지,<br /><span class="text-gradient">모든 걸 해결합니다</span>
         </h2>
       </div>
 
@@ -701,9 +873,12 @@
 
         <!-- F1 -->
         <div class="card-hover glass rounded-2xl p-6 border border-white/5 reveal" style="transition-delay:0.1s">
-          <div class="w-14 h-14 rounded-2xl bg-brand-grad flex items-center justify-center text-2xl mb-5 shadow-lg shadow-brand-500/30">&#128205;</div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-brand-grad flex items-center justify-center text-2xl mb-5 shadow-lg shadow-brand-500/30">
+            &#128205;</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">위치 기반 실시간 맵</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">GPS로 현재 위치를 감지, Kakao Maps에 주변 구장 모집 현황을 마커로 표시합니다. 반경 1~5km 내 경기를 실시간으로 탐색하세요.</p>
+          <p class="text-sm text-gray-400 leading-relaxed">GPS로 현재 위치를 감지, Kakao Maps에 주변 구장 모집 현황을 마커로 표시합니다. 반경 1~5km
+            내 경기를 실시간으로 탐색하세요.</p>
           <div class="flex flex-wrap gap-2 mt-4">
             <span class="text-[11px] text-brand-300 bg-brand-500/10 px-3 py-1 rounded-full font-medium">PostGIS</span>
             <span class="text-[11px] text-brand-300 bg-brand-500/10 px-3 py-1 rounded-full font-medium">마커 클러스터링</span>
@@ -712,9 +887,12 @@
 
         <!-- F2 -->
         <div class="card-hover glass rounded-2xl p-6 border border-white/5 reveal" style="transition-delay:0.15s">
-          <div class="w-14 h-14 rounded-2xl bg-warn/20 border border-warn/30 flex items-center justify-center text-2xl mb-5">&#9889;</div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-warn/20 border border-warn/30 flex items-center justify-center text-2xl mb-5">
+            &#9889;</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">초과 방지 동시성 제어</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">Redis 분산 락으로 동시 신청이 몰려도 정확히 남은 자리만큼만 결제됩니다. 오버부킹 걱정 없는 안정적인 시스템.</p>
+          <p class="text-sm text-gray-400 leading-relaxed">Redis 분산 락으로 동시 신청이 몰려도 정확히 남은 자리만큼만 결제됩니다. 오버부킹 걱정 없는 안정적인
+            시스템.</p>
           <div class="flex flex-wrap gap-2 mt-4">
             <span class="text-[11px] text-warn bg-warn/10 px-3 py-1 rounded-full font-medium">Redis Lock</span>
             <span class="text-[11px] text-warn bg-warn/10 px-3 py-1 rounded-full font-medium">원자적 연산</span>
@@ -723,9 +901,12 @@
 
         <!-- F3 -->
         <div class="card-hover glass rounded-2xl p-6 border border-white/5 reveal" style="transition-delay:0.2s">
-          <div class="w-14 h-14 rounded-2xl bg-neon/10 border border-neon/30 flex items-center justify-center text-2xl mb-5">&#128179;</div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-neon/10 border border-neon/30 flex items-center justify-center text-2xl mb-5">
+            &#128179;</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">에스크로 간편결제</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">Toss Payments 연동, 참가비는 에스크로로 Hold. 경기 종료 및 출석 확인 후 자동 정산. 노쇼 시 보증금 귀속.</p>
+          <p class="text-sm text-gray-400 leading-relaxed">Toss Payments 연동, 참가비는 에스크로로 Hold. 경기 종료 및 출석 확인 후 자동 정산. 노쇼
+            시 보증금 귀속.</p>
           <div class="flex flex-wrap gap-2 mt-4">
             <span class="text-[11px] text-neon bg-neon/10 px-3 py-1 rounded-full font-medium">Toss Payments</span>
             <span class="text-[11px] text-neon bg-neon/10 px-3 py-1 rounded-full font-medium">에스크로</span>
@@ -734,9 +915,12 @@
 
         <!-- F4 -->
         <div class="card-hover glass rounded-2xl p-6 border border-white/5 reveal" style="transition-delay:0.25s">
-          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center text-2xl mb-5">&#128241;</div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center text-2xl mb-5">
+            &#128241;</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">QR 출석 인증</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">1분마다 갱신되는 TOTP 기반 동적 QR코드. GPS 위조 불가. 호스트 앱에서 생성, 게스트가 스캔하여 물리적 출석 확인.</p>
+          <p class="text-sm text-gray-400 leading-relaxed">1분마다 갱신되는 TOTP 기반 동적 QR코드. GPS 위조 불가. 호스트 앱에서 생성, 게스트가 스캔하여
+            물리적 출석 확인.</p>
           <div class="flex flex-wrap gap-2 mt-4">
             <span class="text-[11px] text-accent bg-accent/10 px-3 py-1 rounded-full font-medium">TOTP QR</span>
             <span class="text-[11px] text-accent bg-accent/10 px-3 py-1 rounded-full font-medium">WebSocket</span>
@@ -745,28 +929,42 @@
 
         <!-- F5 -->
         <div class="card-hover glass rounded-2xl p-6 border border-white/5 reveal" style="transition-delay:0.3s">
-          <div class="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-5">&#127777;&#65039;</div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-5">
+            &#127777;&#65039;</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">3차원 매너 온도 시스템</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">실력 &middot; 매너 &middot; 시간 엄수 3가지 축으로 상호 평가. 누적된 매너 온도가 신뢰도를 높이고 좋은 매칭을 보장합니다.</p>
+          <p class="text-sm text-gray-400 leading-relaxed">실력 &middot; 매너 &middot; 시간 엄수 3가지 축으로 상호 평가. 누적된 매너 온도가 신뢰도를
+            높이고 좋은 매칭을 보장합니다.</p>
           <div class="mt-5 space-y-2.5">
             <div>
-              <div class="flex justify-between text-[11px] text-gray-400 mb-1"><span>실력</span><span class="text-white font-semibold">4.8 / 5.0</span></div>
-              <div class="w-full bg-dark-700 rounded-full h-1.5"><div class="h-1.5 rounded-full bg-brand-grad" style="width:96%"></div></div>
+              <div class="flex justify-between text-[11px] text-gray-400 mb-1"><span>실력</span><span
+                  class="text-white font-semibold">4.8 / 5.0</span></div>
+              <div class="w-full bg-dark-700 rounded-full h-1.5">
+                <div class="h-1.5 rounded-full bg-brand-grad" style="width:96%"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-[11px] text-gray-400 mb-1"><span>매너</span><span class="text-white font-semibold">4.9 / 5.0</span></div>
-              <div class="w-full bg-dark-700 rounded-full h-1.5"><div class="h-1.5 rounded-full" style="width:98%;background:#39FF14;opacity:0.8;"></div></div>
+              <div class="flex justify-between text-[11px] text-gray-400 mb-1"><span>매너</span><span
+                  class="text-white font-semibold">4.9 / 5.0</span></div>
+              <div class="w-full bg-dark-700 rounded-full h-1.5">
+                <div class="h-1.5 rounded-full" style="width:98%;background:#39FF14;opacity:0.8;"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-[11px] text-gray-400 mb-1"><span>시간 엄수</span><span class="text-white font-semibold">5.0 / 5.0</span></div>
-              <div class="w-full bg-dark-700 rounded-full h-1.5"><div class="h-1.5 rounded-full bg-accent" style="width:100%;opacity:0.8;"></div></div>
+              <div class="flex justify-between text-[11px] text-gray-400 mb-1"><span>시간 엄수</span><span
+                  class="text-white font-semibold">5.0 / 5.0</span></div>
+              <div class="w-full bg-dark-700 rounded-full h-1.5">
+                <div class="h-1.5 rounded-full bg-accent" style="width:100%;opacity:0.8;"></div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- FCM -->
         <div class="card-hover glass rounded-2xl p-6 border border-white/5 reveal" style="transition-delay:0.35s">
-          <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-2xl mb-5">&#128276;</div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-2xl mb-5">
+            &#128276;</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">실시간 푸시 알림</h3>
           <p class="text-sm text-gray-400 leading-relaxed">신청 수락/거절, 출석 인증, 정산 완료까지 모든 단계를 FCM 푸시 알림으로 즉시 받아보세요.</p>
           <div class="mt-5 space-y-2">
@@ -805,29 +1003,42 @@
       <!-- 탭 -->
       <div class="flex justify-center mb-10 reveal">
         <div class="glass rounded-2xl p-1.5 flex gap-1">
-          <button id="tab-host" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-bold text-white bg-brand-grad shadow-lg transition-all duration-300" onclick="switchTab('host')">&#9889; 팀장 (호스트)</button>
-          <button id="tab-guest" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-semibold text-gray-400 transition-all duration-300 hover:text-white" onclick="switchTab('guest')">&#127939; 용병 (게스트)</button>
+          <button id="tab-host"
+            class="tab-btn px-6 py-2.5 rounded-xl text-sm font-bold text-white bg-brand-grad shadow-lg transition-all duration-300"
+            onclick="switchTab('host')">&#9889; 팀장 (호스트)</button>
+          <button id="tab-guest"
+            class="tab-btn px-6 py-2.5 rounded-xl text-sm font-semibold text-gray-400 transition-all duration-300 hover:text-white"
+            onclick="switchTab('guest')">&#127939; 용병 (게스트)</button>
         </div>
       </div>
 
       <!-- 호스트 스텝 -->
       <div id="steps-host" class="reveal">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 relative">
-          <div class="hidden sm:block absolute top-10 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-brand-500 to-accent z-0"></div>
+          <div
+            class="hidden sm:block absolute top-10 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-brand-500 to-accent z-0">
+          </div>
           <div class="relative z-10 text-center">
-            <div class="w-20 h-20 rounded-3xl bg-brand-grad mx-auto mb-4 flex items-center justify-center text-3xl shadow-xl shadow-brand-500/30">&#128221;</div>
-            <div class="inline-block bg-brand-500/20 text-brand-300 text-xs font-bold px-3 py-1 rounded-full mb-2">STEP 01</div>
+            <div
+              class="w-20 h-20 rounded-3xl bg-brand-grad mx-auto mb-4 flex items-center justify-center text-3xl shadow-xl shadow-brand-500/30">
+              &#128221;</div>
+            <div class="inline-block bg-brand-500/20 text-brand-300 text-xs font-bold px-3 py-1 rounded-full mb-2">STEP
+              01</div>
             <h4 class="font-bold text-white mb-2">모집글 작성</h4>
             <p class="text-sm text-gray-400 leading-relaxed">종목, 구장, 일시, 인원, 참가비를 설정하고 모집을 시작합니다</p>
           </div>
           <div class="relative z-10 text-center">
-            <div class="w-20 h-20 rounded-3xl bg-warn/20 border border-warn/40 mx-auto mb-4 flex items-center justify-center text-3xl">&#128101;</div>
+            <div
+              class="w-20 h-20 rounded-3xl bg-warn/20 border border-warn/40 mx-auto mb-4 flex items-center justify-center text-3xl">
+              &#128101;</div>
             <div class="inline-block bg-warn/20 text-warn text-xs font-bold px-3 py-1 rounded-full mb-2">STEP 02</div>
             <h4 class="font-bold text-white mb-2">신청자 수락</h4>
             <p class="text-sm text-gray-400 leading-relaxed">매너 온도와 프로필을 보고 신청자를 수락하거나 거절합니다</p>
           </div>
           <div class="relative z-10 text-center">
-            <div class="w-20 h-20 rounded-3xl bg-neon/10 border border-neon/30 mx-auto mb-4 flex items-center justify-center text-3xl">&#128176;</div>
+            <div
+              class="w-20 h-20 rounded-3xl bg-neon/10 border border-neon/30 mx-auto mb-4 flex items-center justify-center text-3xl">
+              &#128176;</div>
             <div class="inline-block bg-neon/20 text-neon text-xs font-bold px-3 py-1 rounded-full mb-2">STEP 03</div>
             <h4 class="font-bold text-white mb-2">QR 출석 &amp; 정산</h4>
             <p class="text-sm text-gray-400 leading-relaxed">경기 당일 QR로 출석 확인 후 에스크로 정산금 자동 입금</p>
@@ -838,22 +1049,33 @@
       <!-- 게스트 스텝 -->
       <div id="steps-guest" class="reveal hidden">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 relative">
-          <div class="hidden sm:block absolute top-10 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-accent to-brand-500 z-0"></div>
+          <div
+            class="hidden sm:block absolute top-10 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-accent to-brand-500 z-0">
+          </div>
           <div class="relative z-10 text-center">
-            <div class="w-20 h-20 rounded-3xl bg-accent/20 border border-accent/40 mx-auto mb-4 flex items-center justify-center text-3xl shadow-xl shadow-accent/20">&#128506;&#65039;</div>
-            <div class="inline-block bg-accent/20 text-accent text-xs font-bold px-3 py-1 rounded-full mb-2">STEP 01</div>
+            <div
+              class="w-20 h-20 rounded-3xl bg-accent/20 border border-accent/40 mx-auto mb-4 flex items-center justify-center text-3xl shadow-xl shadow-accent/20">
+              &#128506;&#65039;</div>
+            <div class="inline-block bg-accent/20 text-accent text-xs font-bold px-3 py-1 rounded-full mb-2">STEP 01
+            </div>
             <h4 class="font-bold text-white mb-2">맵에서 경기 탐색</h4>
             <p class="text-sm text-gray-400 leading-relaxed">GPS 기반 맵에서 내 주변 활성 경기 마커를 클릭해 상세 확인</p>
           </div>
           <div class="relative z-10 text-center">
-            <div class="w-20 h-20 rounded-3xl bg-brand-500/20 border border-brand-500/40 mx-auto mb-4 flex items-center justify-center text-3xl">&#128179;</div>
-            <div class="inline-block bg-brand-500/20 text-brand-300 text-xs font-bold px-3 py-1 rounded-full mb-2">STEP 02</div>
+            <div
+              class="w-20 h-20 rounded-3xl bg-brand-500/20 border border-brand-500/40 mx-auto mb-4 flex items-center justify-center text-3xl">
+              &#128179;</div>
+            <div class="inline-block bg-brand-500/20 text-brand-300 text-xs font-bold px-3 py-1 rounded-full mb-2">STEP
+              02</div>
             <h4 class="font-bold text-white mb-2">결제 후 신청</h4>
             <p class="text-sm text-gray-400 leading-relaxed">간편 결제로 참가비 선결제 &rarr; 수락 대기 &rarr; 채팅방 자동 초대</p>
           </div>
           <div class="relative z-10 text-center">
-            <div class="w-20 h-20 rounded-3xl bg-purple-500/20 border border-purple-500/40 mx-auto mb-4 flex items-center justify-center text-3xl">&#128241;</div>
-            <div class="inline-block bg-purple-500/20 text-purple-300 text-xs font-bold px-3 py-1 rounded-full mb-2">STEP 03</div>
+            <div
+              class="w-20 h-20 rounded-3xl bg-purple-500/20 border border-purple-500/40 mx-auto mb-4 flex items-center justify-center text-3xl">
+              &#128241;</div>
+            <div class="inline-block bg-purple-500/20 text-purple-300 text-xs font-bold px-3 py-1 rounded-full mb-2">
+              STEP 03</div>
             <h4 class="font-bold text-white mb-2">QR 스캔 &amp; 경기</h4>
             <p class="text-sm text-gray-400 leading-relaxed">구장 도착 후 호스트 QR 스캔 &rarr; 출석 완료 &rarr; 경기 후 상호 평가</p>
           </div>
@@ -894,27 +1116,40 @@
 
   <!-- == 앱 다운로드 CTA == -->
   <section id="cta" class="py-24 px-4 relative overflow-hidden">
-    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(108,58,228,0.15) 0%, rgba(0,198,255,0.05) 100%), #080812;"></div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-brand-500/30 to-transparent pointer-events-none"></div>
+    <div class="absolute inset-0"
+      style="background: linear-gradient(135deg, rgba(108,58,228,0.15) 0%, rgba(0,198,255,0.05) 100%), #080812;"></div>
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-brand-500/30 to-transparent pointer-events-none">
+    </div>
 
     <div class="max-w-2xl mx-auto text-center relative z-10 reveal">
-      <div class="w-20 h-20 rounded-3xl bg-brand-grad mx-auto mb-6 flex items-center justify-center text-3xl shadow-2xl shadow-brand-500/40 animate-glow">&#9889;</div>
+      <div
+        class="w-20 h-20 rounded-3xl bg-brand-grad mx-auto mb-6 flex items-center justify-center text-3xl shadow-2xl shadow-brand-500/40 animate-glow">
+        &#9889;</div>
 
       <h2 class="font-display font-black text-4xl sm:text-5xl text-white mb-4 leading-tight">
-        지금 바로<br/><span class="text-gradient">무료로 시작</span>하세요
+        지금 바로<br /><span class="text-gradient">무료로 시작</span>하세요
       </h2>
       <p class="text-gray-400 text-base sm:text-lg mb-10">
-        강남 &middot; 송파 베타 서비스 오픈 중.<br/>
+        강남 &middot; 송파 베타 서비스 오픈 중.<br />
         앱 설치 후 첫 매칭은 참가비 <strong class="text-white">100% 캐시백!</strong>
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-        <button id="appstore-btn" class="btn-primary flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-white shadow-xl shadow-brand-500/30">
-          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <button id="appstore-btn"
+          class="btn-primary flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-white shadow-xl shadow-brand-500/30">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+          </svg>
           App Store
         </button>
-        <button id="playstore-btn" class="glass-light border border-white/10 hover:border-brand-400/50 flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-white transition-all duration-300 hover:bg-brand-500/10">
-          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.31.17.66.22 1.02.14L15.77 12 12 8.23 3.18 23.76zM20.47 10.55l-2.68-1.54-3.84 3.99 3.84 3.99 2.69-1.55c.77-.43.77-1.46-.01-1.89zM1.88.22C1.58.38 1.38.7 1.38 1.1v21.8c0 .4.2.72.5.88L13.35 12 1.88.22zM12 13.77L3.2 23.76c.32.09.66.04.96-.13L14.43 18l-2.43-4.23z"/></svg>
+        <button id="playstore-btn"
+          class="glass-light border border-white/10 hover:border-brand-400/50 flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-white transition-all duration-300 hover:bg-brand-500/10">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M3.18 23.76c.31.17.66.22 1.02.14L15.77 12 12 8.23 3.18 23.76zM20.47 10.55l-2.68-1.54-3.84 3.99 3.84 3.99 2.69-1.55c.77-.43.77-1.46-.01-1.89zM1.88.22C1.58.38 1.38.7 1.38 1.1v21.8c0 .4.2.72.5.88L13.35 12 1.88.22zM12 13.77L3.2 23.76c.32.09.66.04.96-.13L14.43 18l-2.43-4.23z" />
+          </svg>
           Google Play
         </button>
       </div>
@@ -922,10 +1157,13 @@
       <div class="glass inline-flex items-center gap-4 rounded-2xl px-6 py-4 border border-brand-500/20">
         <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0">
           <svg viewBox="0 0 7 7" class="w-10 h-10" fill="#080812">
-            <rect x="0" y="0" width="3" height="3"/><rect x="4" y="0" width="3" height="3"/>
-            <rect x="0" y="4" width="3" height="3"/><rect x="2" y="2" width="1" height="1" fill="white"/>
-            <rect x="5" y="5" width="2" height="2"/><rect x="4" y="4" width="1" height="1"/>
-            <rect x="3" y="3" width="1" height="1"/>
+            <rect x="0" y="0" width="3" height="3" />
+            <rect x="4" y="0" width="3" height="3" />
+            <rect x="0" y="4" width="3" height="3" />
+            <rect x="2" y="2" width="1" height="1" fill="white" />
+            <rect x="5" y="5" width="2" height="2" />
+            <rect x="4" y="4" width="1" height="1" />
+            <rect x="3" y="3" width="1" height="1" />
           </svg>
         </div>
         <div class="text-left">
@@ -948,11 +1186,17 @@
             </div>
             <span class="font-black text-lg font-display text-white">동네용병</span>
           </div>
-          <p class="text-xs text-gray-500 leading-relaxed">우리 동네 스포츠 용병 모집 및<br/>즉석 매칭 플랫폼</p>
+          <p class="text-xs text-gray-500 leading-relaxed">우리 동네 스포츠 용병 모집 및<br />즉석 매칭 플랫폼</p>
           <div class="flex gap-3 mt-4">
-            <a href="#" id="footer-insta" class="w-8 h-8 glass-light rounded-lg flex items-center justify-center text-sm hover:bg-brand-500/20 transition-colors" aria-label="인스타그램">&#128247;</a>
-            <a href="#" id="footer-twitter" class="w-8 h-8 glass-light rounded-lg flex items-center justify-center text-sm hover:bg-brand-500/20 transition-colors" aria-label="트위터">&#128038;</a>
-            <a href="#" id="footer-youtube" class="w-8 h-8 glass-light rounded-lg flex items-center justify-center text-sm hover:bg-brand-500/20 transition-colors" aria-label="유튜브">&#9654;&#65039;</a>
+            <a href="#" id="footer-insta"
+              class="w-8 h-8 glass-light rounded-lg flex items-center justify-center text-sm hover:bg-brand-500/20 transition-colors"
+              aria-label="인스타그램">&#128247;</a>
+            <a href="#" id="footer-twitter"
+              class="w-8 h-8 glass-light rounded-lg flex items-center justify-center text-sm hover:bg-brand-500/20 transition-colors"
+              aria-label="트위터">&#128038;</a>
+            <a href="#" id="footer-youtube"
+              class="w-8 h-8 glass-light rounded-lg flex items-center justify-center text-sm hover:bg-brand-500/20 transition-colors"
+              aria-label="유튜브">&#9654;&#65039;</a>
           </div>
         </div>
         <div>
@@ -998,16 +1242,158 @@
 
 
   <!-- == 모바일 FAB == -->
-  <button id="fab-btn" class="fixed bottom-6 right-5 z-50 w-14 h-14 btn-primary rounded-full flex items-center justify-center shadow-2xl shadow-brand-500/50 md:hidden" aria-label="용병 모집 글쓰기">
+  <button id="fab-btn"
+    class="fixed bottom-6 right-5 z-50 w-14 h-14 btn-primary rounded-full flex items-center justify-center shadow-2xl shadow-brand-500/50 md:hidden"
+    aria-label="용병 모집 글쓰기">
     <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
     </svg>
   </button>
 
   <!-- 토스트 알림 -->
-  <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 glass border border-neon/30 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-xl opacity-0 pointer-events-none transition-all duration-500 whitespace-nowrap" style="transform:translateX(-50%) translateY(-16px);" aria-live="polite">
+  <div id="toast"
+    class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 glass border border-neon/30 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-xl opacity-0 pointer-events-none transition-all duration-500 whitespace-nowrap"
+    style="transform:translateX(-50%) translateY(-16px);" aria-live="polite">
     <span id="toast-icon" class="text-neon text-lg">&#9989;</span>
     <span id="toast-msg" class="text-sm font-semibold text-white">신청이 완료되었습니다!</span>
+  </div>
+
+
+  <!-- ====================================
+       신청 모달
+  ===================================== -->
+  <div id="apply-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+    <!-- 백드롭 -->
+    <div id="apply-modal-backdrop" class="absolute inset-0" style="background:rgba(8,8,18,0.85);backdrop-filter:blur(8px);"></div>
+
+    <!-- 모달 패널 -->
+    <div class="relative w-full max-w-md glass rounded-3xl border border-brand-500/30 shadow-2xl shadow-brand-500/20 overflow-hidden"
+         style="animation:slideUp .35s ease-out forwards;">
+
+      <!-- 헤더 그라디언트 띠 -->
+      <div class="h-1 w-full" style="background:linear-gradient(90deg,#6C3AE4,#00C6FF);"></div>
+
+      <!-- 컨텐츠 -->
+      <div class="p-6">
+        <!-- 닫기 버튼 -->
+        <button id="apply-modal-close"
+          class="absolute top-4 right-4 w-8 h-8 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+          aria-label="닫기">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- 경기 요약 -->
+        <div id="apply-modal-summary" class="flex items-center gap-3 mb-5 p-3 rounded-2xl" style="background:rgba(108,58,228,0.08);border:1px solid rgba(108,58,228,0.2);">
+          <div id="apply-modal-icon" class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0" style="background:rgba(255,107,53,0.15);">&#9917;</div>
+          <div class="flex-1 min-w-0">
+            <p id="apply-modal-title" class="font-bold text-sm text-white truncate">강남 풋살파크 A구장</p>
+            <p id="apply-modal-meta" class="text-xs text-gray-400 mt-0.5">오늘 오후 7시 &middot; 4/5명 &middot; &#8361;8,000</p>
+          </div>
+          <span id="apply-modal-badge" class="text-[10px] font-black text-warn bg-warn/15 px-2.5 py-1 rounded-full flex-shrink-0">긴급</span>
+        </div>
+
+        <h2 class="font-display font-black text-lg text-white mb-1">참가 신청</h2>
+        <p class="text-xs text-gray-500 mb-5">아래 정보를 입력하면 팀장에게 신청서가 전달됩니다.</p>
+
+        <form id="apply-form" class="space-y-4" onsubmit="return false;">
+          <!-- 이름 -->
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">닉네임 / 이름 <span class="text-warn">*</span></label>
+            <input id="apply-name" type="text" placeholder="홍길동" maxlength="20" required
+              class="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 outline-none transition-all"
+              style="background:rgba(28,28,56,0.8);border:1px solid rgba(255,255,255,0.08);" />
+          </div>
+          <!-- 연락처 -->
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">연락처 (선택)</label>
+            <input id="apply-phone" type="tel" placeholder="010-0000-0000" maxlength="15"
+              class="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 outline-none transition-all"
+              style="background:rgba(28,28,56,0.8);border:1px solid rgba(255,255,255,0.08);" />
+          </div>
+          <!-- 메시지 -->
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">팀장에게 한마디 (선택)</label>
+            <textarea id="apply-msg" rows="2" placeholder="안녕하세요! 풋살 3년 경력입니다 &#128518;" maxlength="100"
+              class="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 outline-none resize-none transition-all"
+              style="background:rgba(28,28,56,0.8);border:1px solid rgba(255,255,255,0.08);"></textarea>
+          </div>
+
+          <!-- 결제 정보 -->
+          <div id="apply-payment-box" class="rounded-2xl p-4" style="background:rgba(57,255,20,0.05);border:1px solid rgba(57,255,20,0.2);">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-semibold text-gray-300">결제 예정 금액</span>
+              <span id="apply-price" class="font-display font-black text-lg text-neon">&#8361;8,000</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <svg class="w-3 h-3 text-neon flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <p class="text-[10px] text-gray-500">에스크로 안심 결제 &mdash; 경기 확인 후 자동 정산</p>
+            </div>
+          </div>
+
+          <!-- CTA 버튼 -->
+          <button type="submit" id="apply-submit-btn"
+            class="btn-primary w-full py-4 rounded-2xl font-black text-white text-sm shadow-xl shadow-brand-500/30 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            신청 완료
+          </button>
+          <p class="text-[10px] text-center text-gray-600">팀장 수락 후 결제가 확정됩니다. 거절 시 전액 환불.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ====================================
+       전체 모집글 모달
+  ===================================== -->
+  <div id="all-posts-modal" class="fixed inset-0 z-[100] flex items-start justify-center p-4 pt-20" style="display:none!important">
+    <!-- 백드롭 -->
+    <div id="all-posts-backdrop" class="absolute inset-0" style="background:rgba(8,8,18,0.9);backdrop-filter:blur(12px);"></div>
+
+    <!-- 패널 -->
+    <div class="relative w-full max-w-3xl" style="animation:slideUp .35s ease-out forwards;">
+      <!-- 헤더 -->
+      <div class="glass rounded-t-3xl border border-white/10 border-b-0 px-6 pt-6 pb-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-2 h-2 rounded-full bg-warn animate-pulse"></div>
+              <span class="text-xs font-bold text-warn tracking-wider">LIVE</span>
+            </div>
+            <h2 class="font-display font-black text-xl text-white">전체 모집글</h2>
+            <p class="text-xs text-gray-500 mt-0.5">총 <span id="all-posts-count" class="text-brand-300 font-bold">6</span>개의 모집글이 진행 중입니다</p>
+          </div>
+          <button id="all-posts-close"
+            class="w-9 h-9 rounded-full glass-light flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+            aria-label="닫기">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- 필터 칩 -->
+        <div class="flex gap-2 mt-4 overflow-x-auto pb-1" id="all-posts-filters">
+          <button class="all-filter-chip flex-shrink-0 text-[11px] font-bold px-3.5 py-1.5 rounded-full bg-brand-grad text-white" data-filter="all">&#127942; 전체</button>
+          <button class="all-filter-chip flex-shrink-0 text-[11px] font-medium px-3.5 py-1.5 rounded-full glass-light text-gray-300" data-filter="futsal">&#9917; 풋살</button>
+          <button class="all-filter-chip flex-shrink-0 text-[11px] font-medium px-3.5 py-1.5 rounded-full glass-light text-gray-300" data-filter="basketball">&#127936; 농구</button>
+          <button class="all-filter-chip flex-shrink-0 text-[11px] font-medium px-3.5 py-1.5 rounded-full glass-light text-gray-300" data-filter="badminton">&#127992; 배드민턴</button>
+          <button class="all-filter-chip flex-shrink-0 text-[11px] font-medium px-3.5 py-1.5 rounded-full glass-light text-gray-300" data-filter="tennis">&#127934; 테니스</button>
+          <button class="all-filter-chip flex-shrink-0 text-[11px] font-medium px-3.5 py-1.5 rounded-full glass-light text-gray-300" data-filter="volleyball">&#127952; 배구</button>
+        </div>
+      </div>
+
+      <!-- 목록 스크롤 영역 -->
+      <div class="glass rounded-b-3xl border border-white/10 border-t-0 overflow-y-auto" style="max-height:65vh;">
+        <div id="all-posts-list" class="p-4 space-y-3"></div>
+      </div>
+    </div>
   </div>
 
 
@@ -1036,10 +1422,10 @@
 
     // 탭 전환
     function switchTab(tab) {
-      const hostSteps  = document.getElementById('steps-host');
+      const hostSteps = document.getElementById('steps-host');
       const guestSteps = document.getElementById('steps-guest');
-      const tabHost    = document.getElementById('tab-host');
-      const tabGuest   = document.getElementById('tab-guest');
+      const tabHost = document.getElementById('tab-host');
+      const tabGuest = document.getElementById('tab-guest');
       const activeClass = 'tab-btn px-6 py-2.5 rounded-xl text-sm font-bold text-white bg-brand-grad shadow-lg transition-all duration-300';
       const inactiveClass = 'tab-btn px-6 py-2.5 rounded-xl text-sm font-semibold text-gray-400 transition-all duration-300 hover:text-white';
       if (tab === 'host') {
@@ -1068,16 +1454,178 @@
       }, 3000);
     }
 
-    ['apply-btn-1','apply-btn-2','apply-btn-3'].forEach(id => {
+    // ── 신청 모달 데이터 ──────────────────────────────
+    const MATCH_DATA = [
+      {
+        id: 1, icon: '⚽', iconBg: 'rgba(255,107,53,0.15)', sport: 'futsal',
+        title: '강남 풋살파크 A구장', meta: '오늘 오후 7시 · 4/5명 · ₩8,000',
+        badge: '긴급', badgeColor: '#FF6B35', price: '₩8,000', priceColor: '#39FF14',
+        host: '김민준', hostInitial: '김', temp: '36.5', progress: 80, tags: ['중급','5vs5','조끼제공']
+      },
+      {
+        id: 2, icon: '🏀', iconBg: 'rgba(108,58,228,0.15)', sport: 'basketball',
+        title: '방이동 실내 농구장', meta: '오늘 저녁 · 3/6명 · 무료',
+        badge: '오늘저녁', badgeColor: '#00C6FF', price: '무료', priceColor: '#00C6FF',
+        host: '이지현', hostInitial: '이', temp: '42.0', progress: 50, tags: ['초보환영','3vs3','공있음']
+      },
+      {
+        id: 3, icon: '🏸', iconBg: 'rgba(168,85,247,0.15)', sport: 'badminton',
+        title: '서초 배드민턴센터 2코트', meta: '내일 오전 · 2/4명 · ₩5,000',
+        badge: '내일오전', badgeColor: '#a855f7', price: '₩5,000', priceColor: '#a855f7',
+        host: '박성훈', hostInitial: '박', temp: '38.7', progress: 50, tags: ['중상급','복식','셔틀콕제공']
+      },
+      {
+        id: 4, icon: '🎾', iconBg: 'rgba(0,198,255,0.12)', sport: 'tennis',
+        title: '올림픽공원 테니스장 3번 코트', meta: '내일 오후 2시 · 1/2명 · ₩12,000',
+        badge: '내일오후', badgeColor: '#00C6FF', price: '₩12,000', priceColor: '#00C6FF',
+        host: '최수연', hostInitial: '최', temp: '44.1', progress: 50, tags: ['중급','복식']
+      },
+      {
+        id: 5, icon: '🏐', iconBg: 'rgba(57,255,20,0.1)', sport: 'volleyball',
+        title: '잠실 실내 배구장 B코트', meta: '이번주 토요일 · 4/8명 · 무료',
+        badge: '이번주', badgeColor: '#39FF14', price: '무료', priceColor: '#39FF14',
+        host: '정우진', hostInitial: '정', temp: '40.2', progress: 50, tags: ['초보환영','6vs6']
+      },
+      {
+        id: 6, icon: '⚽', iconBg: 'rgba(255,107,53,0.12)', sport: 'futsal',
+        title: '마포 풋살 야외구장', meta: '오늘 밤 10시 · 3/5명 · ₩6,000',
+        badge: '야간', badgeColor: '#FF6B35', price: '₩6,000', priceColor: '#39FF14',
+        host: '한동훈', hostInitial: '한', temp: '35.0', progress: 60, tags: ['중급','5vs5','야간조명']
+      },
+    ];
+
+    // ── 신청 모달 열기 ──────────────────────────────
+    function openApplyModal(matchId) {
+      const data = MATCH_DATA.find(m => m.id === matchId) || MATCH_DATA[0];
+      document.getElementById('apply-modal-icon').textContent = data.icon;
+      document.getElementById('apply-modal-icon').style.background = data.iconBg;
+      document.getElementById('apply-modal-title').textContent = data.title;
+      document.getElementById('apply-modal-meta').textContent = data.meta;
+      document.getElementById('apply-modal-badge').textContent = data.badge;
+      document.getElementById('apply-modal-badge').style.color = data.badgeColor;
+      document.getElementById('apply-modal-badge').style.background = data.badgeColor + '22';
+      document.getElementById('apply-price').textContent = data.price;
+      document.getElementById('apply-price').style.color = data.priceColor;
+      // 무료면 결제 박스 숨김
+      document.getElementById('apply-payment-box').style.display = (data.price === '무료') ? 'none' : '';
+
+      const modal = document.getElementById('apply-modal');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      // 폼 초기화
+      document.getElementById('apply-form').reset();
+    }
+
+    function closeApplyModal() {
+      document.getElementById('apply-modal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('apply-modal-close').addEventListener('click', closeApplyModal);
+    document.getElementById('apply-modal-backdrop').addEventListener('click', closeApplyModal);
+
+    document.getElementById('apply-submit-btn').addEventListener('click', () => {
+      const name = document.getElementById('apply-name').value.trim();
+      if (!name) {
+        document.getElementById('apply-name').style.borderColor = '#FF6B35';
+        document.getElementById('apply-name').focus();
+        return;
+      }
+      closeApplyModal();
+      showToast('신청이 완료되었습니다! 팀장 수락을 기다려주세요 🎉', '✅');
+    });
+
+    document.getElementById('apply-name').addEventListener('input', function() {
+      this.style.borderColor = 'rgba(255,255,255,0.08)';
+    });
+
+    // 기존 카드 신청 버튼 (1~3)
+    ['apply-btn-1', 'apply-btn-2', 'apply-btn-3'].forEach((id, idx) => {
       const btn = document.getElementById(id);
-      if (btn) btn.addEventListener('click', () => showToast('신청이 완료되었습니다!', '\u2705'));
+      if (btn) btn.addEventListener('click', () => openApplyModal(idx + 1));
+    });
+
+    // ── 전체 모집글 모달 ──────────────────────────────
+    function renderAllPosts(filter) {
+      const list = document.getElementById('all-posts-list');
+      const filtered = filter === 'all' ? MATCH_DATA : MATCH_DATA.filter(m => m.sport === filter);
+      document.getElementById('all-posts-count').textContent = filtered.length;
+      list.innerHTML = filtered.map(d => `
+        <article class="glass rounded-2xl p-4 border border-white/5 flex items-center gap-4"
+                 style="transition:all .25s ease;cursor:pointer;"
+                 onmouseenter="this.style.borderColor='rgba(108,58,228,0.45)';this.style.transform='translateY(-2px)';"
+                 onmouseleave="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='';"
+        >
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0" style="background:${d.iconBg}">${d.icon}</div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-0.5">
+              <span class="text-[10px] font-black px-2 py-0.5 rounded-full" style="color:${d.badgeColor};background:${d.badgeColor}22;">${d.badge}</span>
+              <span class="text-[10px] text-gray-500">${d.host} 팀장</span>
+            </div>
+            <h3 class="font-bold text-sm text-white truncate">${d.title}</h3>
+            <div class="flex items-center gap-2 mt-1">
+              ${d.tags.map(t => `<span class="text-[10px] bg-dark-700 text-gray-300 px-2 py-0.5 rounded-full">${t}</span>`).join('')}
+            </div>
+            <div class="mt-2">
+              <div class="w-full bg-dark-700 rounded-full h-1.5">
+                <div class="h-1.5 rounded-full" style="width:${d.progress}%;background:${d.badgeColor};"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-end gap-2 flex-shrink-0">
+            <span class="font-display font-bold text-base" style="color:${d.priceColor};">${d.price}</span>
+            <button class="btn-primary text-xs font-bold text-white px-4 py-2 rounded-xl"
+                    onclick="openApplyModal(${d.id});closeAllPostsModal();">신청하기</button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function openAllPostsModal() {
+      renderAllPosts('all');
+      // 필터 칩 초기화
+      document.querySelectorAll('.all-filter-chip').forEach(c => {
+        c.classList.remove('text-white');
+        c.style.background = '';
+        c.className = 'all-filter-chip flex-shrink-0 text-[11px] font-medium px-3.5 py-1.5 rounded-full glass-light text-gray-300';
+      });
+      const allChip = document.querySelector('.all-filter-chip[data-filter="all"]');
+      allChip.className = 'all-filter-chip flex-shrink-0 text-[11px] font-bold px-3.5 py-1.5 rounded-full text-white';
+      allChip.style.background = 'linear-gradient(135deg,#6C3AE4,#00C6FF)';
+
+      document.getElementById('all-posts-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAllPostsModal() {
+      document.getElementById('all-posts-modal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('all-posts-close').addEventListener('click', closeAllPostsModal);
+    document.getElementById('all-posts-backdrop').addEventListener('click', closeAllPostsModal);
+
+    document.getElementById('see-all-btn').addEventListener('click', openAllPostsModal);
+
+    // 필터 칩 클릭
+    document.getElementById('all-posts-filters').addEventListener('click', e => {
+      const chip = e.target.closest('.all-filter-chip');
+      if (!chip) return;
+      const filter = chip.dataset.filter;
+      document.querySelectorAll('.all-filter-chip').forEach(c => {
+        c.className = 'all-filter-chip flex-shrink-0 text-[11px] font-medium px-3.5 py-1.5 rounded-full glass-light text-gray-300';
+        c.style.background = '';
+      });
+      chip.className = 'all-filter-chip flex-shrink-0 text-[11px] font-bold px-3.5 py-1.5 rounded-full text-white';
+      chip.style.background = 'linear-gradient(135deg,#6C3AE4,#00C6FF)';
+      renderAllPosts(filter);
     });
 
     document.getElementById('fab-btn').addEventListener('click', () => {
       showToast('모집글 작성 화면으로 이동합니다...', '\u270d\ufe0f');
     });
 
-    ['appstore-btn','playstore-btn'].forEach(id => {
+    ['appstore-btn', 'playstore-btn'].forEach(id => {
       const btn = document.getElementById(id);
       if (btn) btn.addEventListener('click', () => showToast('\uD83D\uDE80 출시 준비 중! 베타 신청은 이메일로 받고 있어요.', '\uD83D\uDE80'));
     });
@@ -1092,4 +1640,5 @@
   </script>
 
 </body>
+
 </html>
