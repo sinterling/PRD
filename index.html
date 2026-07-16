@@ -2195,6 +2195,59 @@
   </div>
 
 
+  <!-- ====================================
+       모집 취소 확인 모달
+  ===================================== -->
+  <div id="cancel-confirm-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4"
+    style="display:none!important">
+    <!-- 백드롭 -->
+    <div id="cancel-confirm-backdrop" class="absolute inset-0"
+      style="background:rgba(8,8,18,0.92);backdrop-filter:blur(12px);"></div>
+
+    <!-- 패널 -->
+    <div class="relative w-full max-w-sm glass rounded-3xl border shadow-2xl overflow-hidden"
+      style="border-color:rgba(255,107,53,0.4);box-shadow:0 0 40px rgba(255,107,53,0.15);animation:slideUp .3s ease-out forwards;">
+
+      <!-- 경고 색 띠 -->
+      <div class="h-1 w-full" style="background:linear-gradient(90deg,#FF6B35,#FFB347);"></div>
+
+      <div class="p-6">
+        <!-- 아이콘 -->
+        <div class="flex justify-center mb-4">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl"
+            style="background:rgba(255,107,53,0.15);border:1px solid rgba(255,107,53,0.3);">🗑️</div>
+        </div>
+
+        <h3 class="font-display font-black text-lg text-white text-center mb-1">모집글을 취소할까요?</h3>
+        <p id="cancel-confirm-title"
+          class="text-xs text-gray-400 text-center mb-5 leading-relaxed px-2">이 작업은 되돌릴 수 없습니다.</p>
+
+        <!-- 경고 박스 -->
+        <div class="rounded-xl p-3 mb-5" style="background:rgba(255,107,53,0.08);border:1px solid rgba(255,107,53,0.2);">
+          <div class="flex items-start gap-2">
+            <span class="text-warn text-sm flex-shrink-0">⚠️</span>
+            <p class="text-[11px] text-gray-400 leading-relaxed">모집글을 취소하면 <strong class="text-white">즉시 목록에서 삭제</strong>되며, 이미 신청한 참가자에게는 취소 알림이 발송됩니다.</p>
+          </div>
+        </div>
+
+        <!-- 버튼 그룹 -->
+        <div class="flex gap-3">
+          <button id="cancel-confirm-no"
+            class="flex-1 py-3 rounded-xl text-sm font-semibold text-gray-300 transition-all"
+            style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);"
+            onmouseenter="this.style.background='rgba(255,255,255,0.12)';"
+            onmouseleave="this.style.background='rgba(255,255,255,0.07)';">아니요, 유지</button>
+          <button id="cancel-confirm-yes"
+            class="flex-1 py-3 rounded-xl text-sm font-black text-white transition-all"
+            style="background:linear-gradient(135deg,#FF6B35,#FFB347);box-shadow:0 4px 20px rgba(255,107,53,0.35);"
+            onmouseenter="this.style.opacity='0.85';"
+            onmouseleave="this.style.opacity='1';">🗑 네, 취소할게요</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <script>
     // 모바일 메뉴
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -2410,15 +2463,16 @@
       }
 
       list.innerHTML = filtered.map(d => `
-        <article class="glass rounded-2xl p-4 border border-white/5 flex items-center gap-4"
-                 style="transition:all .25s ease;cursor:pointer;"
-                 onmouseenter="this.style.borderColor='rgba(108,58,228,0.45)';this.style.transform='translateY(-2px)';"
-                 onmouseleave="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='';"
+        <article class="glass rounded-2xl p-4 flex items-center gap-4"
+                 style="border:1px solid ${d.isMine ? 'rgba(108,58,228,0.55)' : 'rgba(255,255,255,0.05)'};${d.isMine ? 'background:rgba(108,58,228,0.08);' : ''}transition:all .25s ease;cursor:pointer;"
+                 onmouseenter="this.style.borderColor='rgba(108,58,228,0.55)';this.style.transform='translateY(-2px)';"
+                 onmouseleave="this.style.borderColor='${d.isMine ? 'rgba(108,58,228,0.55)' : 'rgba(255,255,255,0.05)'}';this.style.transform='';"
         >
           <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0" style="background:${d.iconBg}">${d.icon}</div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2 mb-0.5">
-              <span class="text-[10px] font-black px-2 py-0.5 rounded-full" style="color:${d.badgeColor};background:${d.badgeColor}22;">${d.badge}</span>
+              ${d.isMine ? '<span class="text-[10px] font-black px-2 py-0.5 rounded-full" style="color:#fff;background:linear-gradient(135deg,#6C3AE4,#00C6FF);">✏️ 내가 등록</span>' :
+                `<span class="text-[10px] font-black px-2 py-0.5 rounded-full" style="color:${d.badgeColor};background:${d.badgeColor}22;">${d.badge}</span>`}
               <span class="text-[10px] text-gray-500">${d.host} 팀장</span>
             </div>
             <h3 class="font-bold text-sm text-white truncate">${d.title}</h3>
@@ -2433,14 +2487,25 @@
           </div>
           <div class="flex flex-col items-end gap-2 flex-shrink-0">
             <span class="font-display font-bold text-base" style="color:${d.priceColor};">${d.price}</span>
-            <button class="btn-primary text-xs font-bold text-white px-4 py-2 rounded-xl"
-                    onclick="openApplyModal(${d.id});closeAllPostsModal();">신청하기</button>
+            ${d.isMine
+              ? `<div class="flex flex-col items-end gap-1.5">
+                  <span class="text-[10px] font-bold px-3 py-1 rounded-full" style="background:rgba(108,58,228,0.2);color:#9d7aff;">🟣 모집 중</span>
+                  <button class="text-[10px] font-bold px-3 py-1.5 rounded-xl transition-all"
+                          style="background:rgba(255,107,53,0.15);color:#FF6B35;border:1px solid rgba(255,107,53,0.3);"
+                          onmouseenter="this.style.background='rgba(255,107,53,0.3)';"
+                          onmouseleave="this.style.background='rgba(255,107,53,0.15)';"
+                          onclick="openCancelConfirmModal(${d.id}, '${d.title.replace(/'/g, "&#39;")}')">🗑 모집 취소</button>
+                </div>`
+              : `<button class="btn-primary text-xs font-bold text-white px-4 py-2 rounded-xl"
+                        onclick="openApplyModal(${d.id});closeAllPostsModal();">신청하기</button>`
+            }
           </div>
         </article>
       `).join('');
     }
 
     function openAllPostsModal(initialFilter = 'all') {
+      _currentFilter = initialFilter;
       renderAllPosts(initialFilter);
       // 필터 칩 초기화
       document.querySelectorAll('.all-filter-chip').forEach(c => {
@@ -2484,7 +2549,47 @@
       });
       chip.className = 'all-filter-chip flex-shrink-0 text-[11px] font-bold px-3.5 py-1.5 rounded-full text-white';
       chip.style.background = 'linear-gradient(135deg,#6C3AE4,#00C6FF)';
+      _currentFilter = filter;
       renderAllPosts(filter);
+    });
+
+    // ── 모집 취소 확인 모달 ──────────────────────────────
+    var _cancelTargetId = null;
+    var _currentFilter = 'all';
+
+    function openCancelConfirmModal(postId, postTitle) {
+      _cancelTargetId = postId;
+      const titleEl = document.getElementById('cancel-confirm-title');
+      titleEl.innerHTML = `"<strong class="text-white">${postTitle}</strong>" 모집글을 취소하시겠습니까?`;
+      document.getElementById('cancel-confirm-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCancelConfirmModal() {
+      document.getElementById('cancel-confirm-modal').style.display = 'none';
+      // 뒤에 all-posts-modal 이 열려있으면 overflow 유지
+      if (document.getElementById('all-posts-modal').style.display !== 'none') {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    function deleteMyPost(postId) {
+      const idx = MATCH_DATA.findIndex(m => m.id === postId);
+      if (idx === -1) return;
+      const deletedTitle = MATCH_DATA[idx].title;
+      MATCH_DATA.splice(idx, 1);
+      closeCancelConfirmModal();
+      // 목록 새로고침
+      renderAllPosts(_currentFilter);
+      showToast(`"${deletedTitle}" 모집글이 취소되었습니다.`, '🗑️');
+    }
+
+    document.getElementById('cancel-confirm-no').addEventListener('click', closeCancelConfirmModal);
+    document.getElementById('cancel-confirm-backdrop').addEventListener('click', closeCancelConfirmModal);
+    document.getElementById('cancel-confirm-yes').addEventListener('click', () => {
+      if (_cancelTargetId !== null) deleteMyPost(_cancelTargetId);
     });
 
     // ── 용병 모집 모달 ──────────────────────────────
@@ -2515,6 +2620,8 @@
       const location = document.getElementById('host-location').value.trim();
       const date = document.getElementById('host-date').value;
       const time = document.getElementById('host-time').value;
+      const countVal = parseInt(document.getElementById('host-count').value) || 1;
+      const priceVal = parseInt(document.getElementById('host-price').value) || 0;
 
       if (!location) {
         document.getElementById('host-location').style.borderColor = '#FF6B35';
@@ -2526,8 +2633,57 @@
         return;
       }
 
+      // 선택된 종목 가져오기
+      const sportRadio = document.querySelector('input[name="host-sport"]:checked');
+      const sport = sportRadio ? sportRadio.value : 'futsal';
+
+      // 종목별 아이콘 & 색상 매핑
+      const sportMap = {
+        futsal:     { icon: '⚽', iconBg: 'rgba(255,107,53,0.15)', badgeColor: '#FF6B35' },
+        basketball: { icon: '🏀', iconBg: 'rgba(108,58,228,0.15)', badgeColor: '#6C3AE4' },
+        badminton:  { icon: '🏸', iconBg: 'rgba(168,85,247,0.15)', badgeColor: '#a855f7' },
+        tennis:     { icon: '🎾', iconBg: 'rgba(0,198,255,0.12)',  badgeColor: '#00C6FF' },
+        volleyball: { icon: '🏐', iconBg: 'rgba(57,255,20,0.1)',   badgeColor: '#39FF14' },
+        baseball:   { icon: '⚾', iconBg: 'rgba(255,179,71,0.12)', badgeColor: '#FFB347' },
+      };
+      const sm = sportMap[sport] || sportMap['futsal'];
+
+      // 날짜·시간 포맷
+      const [y, mo, d] = date.split('-');
+      const [hh, mm] = time.split(':');
+      const dateLabel = `${mo}/${d} ${hh}:${mm}`;
+      const priceLabel = priceVal === 0 ? '무료' : `₩${priceVal.toLocaleString()}`;
+      const priceColor = priceVal === 0 ? '#39FF14' : '#00C6FF';
+
+      // 새 모집글 데이터 생성
+      const newId = MATCH_DATA.length > 0 ? Math.max(...MATCH_DATA.map(m => m.id)) + 1 : 100;
+      const newPost = {
+        id: newId,
+        icon: sm.icon,
+        iconBg: sm.iconBg,
+        sport: sport,
+        title: location,
+        meta: `${dateLabel} · 0/${countVal}명 · ${priceLabel}`,
+        badge: '내가 등록',
+        badgeColor: '#6C3AE4',
+        price: priceLabel,
+        priceColor: priceColor,
+        host: '나',
+        hostInitial: '나',
+        temp: '36.5',
+        progress: 0,
+        tags: [priceVal === 0 ? '무료' : `₩${priceVal.toLocaleString()}`, `모집 ${countVal}명`],
+        isMine: true,
+      };
+
+      // MATCH_DATA 맨 앞에 추가 (내 글이 목록 최상단에)
+      MATCH_DATA.unshift(newPost);
+
       closeHostModal();
-      showToast('새 모집글이 성공적으로 등록되었습니다!', '🎉');
+      showToast('모집글이 등록되었습니다! 전체 목록에서 확인하세요 🎉', '🎉');
+
+      // 잠깐 후 전체 모집글 모달 자동 오픈
+      setTimeout(() => openAllPostsModal('all'), 350);
     });
 
     document.getElementById('host-location').addEventListener('input', function () {
